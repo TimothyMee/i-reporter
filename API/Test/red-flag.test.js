@@ -4,7 +4,7 @@ const { app } = require('../index');
 
 let testID = 1;
 
-describe('Red-flag test (Post "/red-flags")', () => {
+describe('Red-flag test (Post "/api/v1/red-flags")', () => {
   it('should save Red-flag into the memory and respond appropriately', (done) => {
     const testText = {
       createdBy: 1,
@@ -18,7 +18,7 @@ describe('Red-flag test (Post "/red-flags")', () => {
     };
 
     request(app)
-      .post('/red-flags')
+      .post('/api/v1/red-flags')
       .send(testText)
       .expect(201)
       .expect('Content-Type', /json/)
@@ -42,7 +42,7 @@ describe('Red-flag test (Post "/red-flags")', () => {
     };
 
     request(app)
-      .post('/red-flags')
+      .post('/api/v1/red-flags')
       .send(testText)
       .expect(400)
       .expect('Content-Type', /text/)
@@ -53,10 +53,10 @@ describe('Red-flag test (Post "/red-flags")', () => {
   });
 });
 
-describe('Red-flag test (Get "/red-flags")', () => {
+describe('Red-flag test (Get "/api/v1/red-flags")', () => {
   it('should fetch all Red-flag records in memory', (done) => {
     request(app)
-      .get('/red-flags')
+      .get('/api/v1/red-flags')
       .expect(200)
       .expect('Content-Type', /json/)
       .expect((res) => {
@@ -66,10 +66,10 @@ describe('Red-flag test (Get "/red-flags")', () => {
   });
 });
 
-describe('Red-flag test (Get "/red-flags/:id")', () => {
+describe('Red-flag test (Get "/api/v1/red-flags/:id")', () => {
   it(`should fetch an Red-flag record with specified id "${testID}" from memory`, (done) => {
     request(app)
-      .get(`/red-flags/${testID}`)
+      .get(`/api/v1/red-flags/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
       .expect((res) => {
@@ -79,13 +79,13 @@ describe('Red-flag test (Get "/red-flags/:id")', () => {
   });
 });
 
-describe('Red-flag test (Patch "/red-flags/:id/location")', () => {
-  it(`should edit the record\'s location with specified id "${testID}" from memory`, (done) => {
+describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () => {
+  it(`should edit the record's location with specified id "${testID}" from memory`, (done) => {
     const newLocation = {
       location: '190,90',
     };
     request(app)
-      .patch(`/red-flags/${testID}/location`)
+      .patch(`/api/v1/red-flags/${testID}/location`)
       .send(newLocation)
       .expect(200)
       .expect('Content-Type', /json/)
@@ -101,7 +101,7 @@ describe('Red-flag test (Patch "/red-flags/:id/location")', () => {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch(`/red-flags/${testID}/location`)
+      .patch(`/api/v1/red-flags/${testID}/location`)
       .send(newComment)
       .expect(400)
       .expect('Content-Type', /text/)
@@ -116,7 +116,7 @@ describe('Red-flag test (Patch "/red-flags/:id/location")', () => {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch('/red-flags/0/location')
+      .patch('/api/v1/red-flags/0/location')
       .send(newComment)
       .expect(404)
       .expect('Content-Type', /text/)
@@ -127,13 +127,13 @@ describe('Red-flag test (Patch "/red-flags/:id/location")', () => {
   });
 });
 
-describe('Red-flag test (Patch "/red-flags/:id/comment")', () => {
-  it(`should edit the record\'s comment with specified id "${testID}" from memory`, (done) => {
+describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () => {
+  it(`should edit the record's comment with specified id "${testID}" from memory`, (done) => {
     const newComment = {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch(`/red-flags/${testID}/comment`)
+      .patch(`/api/v1/red-flags/${testID}/comment`)
       .send(newComment)
       .expect(200)
       .expect('Content-Type', /json/)
@@ -149,7 +149,7 @@ describe('Red-flag test (Patch "/red-flags/:id/comment")', () => {
       location: '109, 90',
     };
     request(app)
-      .patch(`/red-flags/${testID}/comment`)
+      .patch(`/api/v1/red-flags/${testID}/comment`)
       .send(newComment)
       .expect(400)
       .expect('Content-Type', /text/)
@@ -164,7 +164,7 @@ describe('Red-flag test (Patch "/red-flags/:id/comment")', () => {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch('/red-flags/0/comment')
+      .patch('/api/v1/red-flags/0/comment')
       .send(newComment)
       .expect(404)
       .expect('Content-Type', /text/)
@@ -175,10 +175,10 @@ describe('Red-flag test (Patch "/red-flags/:id/comment")', () => {
   });
 });
 
-describe('Red-flag test (Delete "/red-flags/:id")', () => {
+describe('Red-flag test (Delete "/api/v1/red-flags/:id")', () => {
   it(`should delete the record with specified id "${testID}" from memory`, (done) => {
     request(app)
-      .delete(`/red-flags/${testID}`)
+      .delete(`/api/v1/red-flags/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
       .expect((res) => {

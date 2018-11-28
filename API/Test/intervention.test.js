@@ -4,7 +4,7 @@ const { app } = require('../index');
 
 let testID = 1;
 
-describe('Intervention test (Post "/interventions")', () => {
+describe('Intervention test (Post "/api/v1/interventions")', () => {
   it('should save intervention into the memory and respond appropriately', (done) => {
     const testText = {
       createdBy: 1,
@@ -18,7 +18,7 @@ describe('Intervention test (Post "/interventions")', () => {
     };
 
     request(app)
-      .post('/interventions')
+      .post('/api/v1/interventions')
       .send(testText)
       .expect(201)
       .expect('Content-Type', /json/)
@@ -42,7 +42,7 @@ describe('Intervention test (Post "/interventions")', () => {
     };
 
     request(app)
-      .post('/interventions')
+      .post('/api/v1/interventions')
       .send(testText)
       .expect(400)
       .expect('Content-Type', /text/)
@@ -53,10 +53,10 @@ describe('Intervention test (Post "/interventions")', () => {
   });
 });
 
-describe('Intervention test (Get "/interventions")', () => {
+describe('Intervention test (Get "/api/v1/interventions")', () => {
   it('should fetch all intervention records in memory', (done) => {
     request(app)
-      .get('/interventions')
+      .get('/api/v1/interventions')
       .expect(200)
       .expect('Content-Type', /json/)
       .expect((res) => {
@@ -66,10 +66,10 @@ describe('Intervention test (Get "/interventions")', () => {
   });
 });
 
-describe('Intervention test (Get "/interventions/:id")', () => {
+describe('Intervention test (Get "/api/v1/interventions/:id")', () => {
   it(`should fetch an intervention record with specified id "${testID}" from memory`, (done) => {
     request(app)
-      .get(`/interventions/${testID}`)
+      .get(`/api/v1/interventions/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
       .expect((res) => {
@@ -79,13 +79,13 @@ describe('Intervention test (Get "/interventions/:id")', () => {
   });
 });
 
-describe('Intervention test (Patch "/interventions/:id/location")', () => {
-  it(`should edit the record\'s location with specified id "${testID}" from memory`, (done) => {
+describe('Intervention test (Patch "/api/v1/interventions/:id/location")', () => {
+  it(`should edit the record's location with specified id "${testID}" from memory`, (done) => {
     const newLocation = {
       location: '190,90',
     };
     request(app)
-      .patch(`/interventions/${testID}/location`)
+      .patch(`/api/v1/interventions/${testID}/location`)
       .send(newLocation)
       .expect(200)
       .expect('Content-Type', /json/)
@@ -101,7 +101,7 @@ describe('Intervention test (Patch "/interventions/:id/location")', () => {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch(`/interventions/${testID}/location`)
+      .patch(`/api/v1/interventions/${testID}/location`)
       .send(newComment)
       .expect(400)
       .expect('Content-Type', /text/)
@@ -116,7 +116,7 @@ describe('Intervention test (Patch "/interventions/:id/location")', () => {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch('/interventions/0/location')
+      .patch('/api/v1/interventions/0/location')
       .send(newComment)
       .expect(404)
       .expect('Content-Type', /text/)
@@ -127,13 +127,13 @@ describe('Intervention test (Patch "/interventions/:id/location")', () => {
   });
 });
 
-describe('Intervention test (Patch "/interventions/:id/comment")', () => {
-  it(`should edit the record\'s comment with specified id "${testID}" from memory`, (done) => {
+describe('Intervention test (Patch "/api/v1/interventions/:id/comment")', () => {
+  it(`should edit the record's comment with specified id "${testID}" from memory`, (done) => {
     const newComment = {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch(`/interventions/${testID}/comment`)
+      .patch(`/api/v1/interventions/${testID}/comment`)
       .send(newComment)
       .expect(200)
       .expect('Content-Type', /json/)
@@ -149,7 +149,7 @@ describe('Intervention test (Patch "/interventions/:id/comment")', () => {
       location: '109, 90',
     };
     request(app)
-      .patch(`/interventions/${testID}/comment`)
+      .patch(`/api/v1/interventions/${testID}/comment`)
       .send(newComment)
       .expect(400)
       .expect('Content-Type', /text/)
@@ -164,7 +164,7 @@ describe('Intervention test (Patch "/interventions/:id/comment")', () => {
       comment: 'Edited comment for testing',
     };
     request(app)
-      .patch('/interventions/0/comment')
+      .patch('/api/v1/interventions/0/comment')
       .send(newComment)
       .expect(404)
       .expect('Content-Type', /text/)
@@ -175,10 +175,10 @@ describe('Intervention test (Patch "/interventions/:id/comment")', () => {
   });
 });
 
-describe('Intervention test (Delete "/interventions/:id")', () => {
+describe('Intervention test (Delete "/api/v1/interventions/:id")', () => {
   it(`should delete the record with specified id "${testID}" from memory`, (done) => {
     request(app)
-      .delete(`/interventions/${testID}`)
+      .delete(`/api/v1/interventions/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
       .expect((res) => {
