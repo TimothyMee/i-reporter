@@ -10,12 +10,12 @@ function getAll(type) {
     if (result.length === 0) {
       reject({
         status: 404,
-        message: `No ${type} has been created yet`,
+        error: `No ${type} has been created yet`,
       });
     } else if (result === 'no such file') {
       reject({
         status: 404,
-        message: 'No such file found',
+        error: 'No such file found',
       });
     }
     resolve({
@@ -35,7 +35,7 @@ function createNew(incident, type) {
     if (result.error) {
       reject({
         status: 400,
-        message: result.error,
+        error: result.error.details[0].message,
       });
     } else {
       getAll(type)
@@ -68,7 +68,7 @@ function get(id, type) {
         if (!result) {
           reject({
             status: 404,
-            message: `could not find record with id in ${type}s`,
+            error: `could not find record with id in ${type}s`,
           });
         }
         resolve({
@@ -91,7 +91,7 @@ function editLocation(id, newLocation, type) {
         if (!result) {
           reject({
             status: 404,
-            message: `could not find record with id in ${type}s`,
+            error: `could not find record with id in ${type}s`,
           });
         } else {
           if (newLocation.location) {
@@ -109,7 +109,7 @@ function editLocation(id, newLocation, type) {
 
           reject({
             status: 400,
-            message: 'update data is wrong. check data',
+            error: 'update data is wrong. check data',
           });
         }
       })
@@ -128,7 +128,7 @@ function editComment(id, newComment, type) {
         if (!result) {
           reject({
             status: 404,
-            message: `could not find record with id in ${type}s`,
+            error: `could not find record with id in ${type}s`,
           });
         } else {
           if (newComment.comment) {
@@ -145,7 +145,7 @@ function editComment(id, newComment, type) {
           }
           reject({
             status: 400,
-            message: 'update data is wrong. check data',
+            error: 'update data is wrong. check data',
           });
         }
       })
@@ -164,12 +164,14 @@ function deleteComment(id, type) {
         if (!result) {
           reject({
             status: 404,
-            message: `could not find record with id in ${type}s`,
+            error: `could not find record with id in ${type}s`,
           });
         } else {
-          const index = res.indexOf(result);
-          res.splice(index, 1);
-          helper.writeJSONFile(`./data/${type}.json`, resData);
+          // const index = res.indexOf(result);
+          // res.splice(index, 1);
+
+          const newData = resData.filter(incident => incident.id !== id);
+          helper.writeJSONFile(`./data/${type}.json`, newData);
 
 
           resolve({

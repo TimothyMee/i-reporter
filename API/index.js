@@ -19,7 +19,7 @@ app.get('/red-flags', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -30,7 +30,7 @@ app.get('/red-flags/:id', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -42,7 +42,7 @@ app.post('/red-flags', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message.details[0].message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -53,7 +53,7 @@ app.patch('/red-flags/:id/location', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -64,7 +64,7 @@ app.patch('/red-flags/:id/comment', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -75,7 +75,7 @@ app.delete('/red-flags/:id', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -91,7 +91,7 @@ app.get('/interventions', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -102,7 +102,7 @@ app.get('/interventions/:id', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -114,7 +114,7 @@ app.post('/interventions', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message.details[0].message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -125,7 +125,7 @@ app.patch('/interventions/:id/location', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -136,7 +136,7 @@ app.patch('/interventions/:id/comment', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
@@ -147,10 +147,14 @@ app.delete('/interventions/:id', (req, res) => {
       res.status(result.status).send(result.data);
     })
     .catch((err) => {
-      res.status(err.status).send(err.message);
+      res.status(err.status).send(err.error);
     });
 });
 
 app.listen(3000, () => {
   console.log('started something crazy');
 });
+
+module.exports = {
+  app,
+};
