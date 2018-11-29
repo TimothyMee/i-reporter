@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for i-reporter/Test/red-flag.test.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">i-reporter/Test/</a> red-flag.test.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>55/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>55/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const expect = require('expect.js');
+const request = require('supertest');
+const { app } = require('../index');
+&nbsp;
+let testID = 1;
+&nbsp;
+describe('Red-flag test (Post "/api/v1/red-flags")', () =&gt; {
+  it('should save Red-flag into the memory and respond appropriately', (done) =&gt; {
+    const testText = {
+      createdBy: 1,
+      type: 'red-flag',
+      name: 'silly Tega',
+      location: '1298,20',
+      status: 'pending',
+      comment: "this is a shade's data",
+      images: 'tegaa.png',
+      videos: 'tegaa.png',
+    };
+&nbsp;
+    request(app)
+      .post('/api/v1/red-flags')
+      .send(testText)
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .expect((res) =&gt; {
+        expect(res.body.message).to.eql('Created red-flag record');
+        testID = res.body.id;
+      })
+      .end(done);
+  });
+&nbsp;
+  it('should fail to save Red-flag into the memory because of wrong data and respond appropriately', (done) =&gt; {
+    const testText = {
+      createdBy: 'timothy',
+      type: 'red-flag',
+      name: 'silly Tega',
+      location: '1298,20',
+      status: 'pending',
+      comment: "this is a shade's data",
+      images: 'tegaa.png',
+      videos: 'tegaa.png',
+    };
+&nbsp;
+    request(app)
+      .post('/api/v1/red-flags')
+      .send(testText)
+      .expect(400)
+      .expect('Content-Type', /text/)
+      .expect((res) =&gt; {
+        expect(res.text).to.eql('"createdBy" must be a number');
+      })
+      .end(done);
+  });
+});
+&nbsp;
+describe('Red-flag test (Get "/api/v1/red-flags")', () =&gt; {
+  it('should fetch all Red-flag records in memory', (done) =&gt; {
+    request(app)
+      .get('/api/v1/red-flags')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect((res) =&gt; {
+        expect(res.body).to.be.an('array');
+      })
+      .end(done);
+  });
+});
+&nbsp;
+describe('Red-flag test (Get "/api/v1/red-flags/:id")', () =&gt; {
+  it(`should fetch an Red-flag record with specified id "${testID}" from memory`, (done) =&gt; {
+    request(app)
+      .get(`/api/v1/red-flags/${testID}`)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect((res) =&gt; {
+        expect(res.body).to.be.an('object');
+      })
+      .end(done);
+  });
+});
+&nbsp;
+describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () =&gt; {
+  it(`should edit the record's location with specified id "${testID}" from memory`, (done) =&gt; {
+    const newLocation = {
+      location: '190,90',
+    };
+    request(app)
+      .patch(`/api/v1/red-flags/${testID}/location`)
+      .send(newLocation)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect((res) =&gt; {
+        expect(res.body.message).to.eql('updated red-flag record\'s location');
+        expect(res.body.id).to.eql(testID);
+      })
+      .end(done);
+  });
+&nbsp;
+  it('should fail to edit the record\'s location because of wrong data entry', (done) =&gt; {
+    const newComment = {
+      comment: 'Edited comment for testing',
+    };
+    request(app)
+      .patch(`/api/v1/red-flags/${testID}/location`)
+      .send(newComment)
+      .expect(400)
+      .expect('Content-Type', /text/)
+      .expect((res) =&gt; {
+        expect(res.text).to.eql('update data is wrong. check data');
+      })
+      .end(done);
+  });
+&nbsp;
+  it('should should not find id to edit', (done) =&gt; {
+    const newComment = {
+      comment: 'Edited comment for testing',
+    };
+    request(app)
+      .patch('/api/v1/red-flags/0/location')
+      .send(newComment)
+      .expect(404)
+      .expect('Content-Type', /text/)
+      .expect((res) =&gt; {
+        expect(res.text).to.eql('could not find record with id in red-flags');
+      })
+      .end(done);
+  });
+});
+&nbsp;
+describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () =&gt; {
+  it(`should edit the record's comment with specified id "${testID}" from memory`, (done) =&gt; {
+    const newComment = {
+      comment: 'Edited comment for testing',
+    };
+    request(app)
+      .patch(`/api/v1/red-flags/${testID}/comment`)
+      .send(newComment)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect((res) =&gt; {
+        expect(res.body.message).to.eql('updated red-flag record\'s comment');
+        expect(res.body.id).to.eql(testID);
+      })
+      .end(done);
+  });
+&nbsp;
+  it('should fail to edit the record\'s comment because of wrong data entry', (done) =&gt; {
+    const newComment = {
+      location: '109, 90',
+    };
+    request(app)
+      .patch(`/api/v1/red-flags/${testID}/comment`)
+      .send(newComment)
+      .expect(400)
+      .expect('Content-Type', /text/)
+      .expect((res) =&gt; {
+        expect(res.text).to.eql('update data is wrong. check data');
+      })
+      .end(done);
+  });
+&nbsp;
+  it('should should not find id to edit', (done) =&gt; {
+    const newComment = {
+      comment: 'Edited comment for testing',
+    };
+    request(app)
+      .patch('/api/v1/red-flags/0/comment')
+      .send(newComment)
+      .expect(404)
+      .expect('Content-Type', /text/)
+      .expect((res) =&gt; {
+        expect(res.text).to.eql('could not find record with id in red-flags');
+      })
+      .end(done);
+  });
+});
+&nbsp;
+describe('Red-flag test (Delete "/api/v1/red-flags/:id")', () =&gt; {
+  it(`should delete the record with specified id "${testID}" from memory`, (done) =&gt; {
+    request(app)
+      .delete(`/api/v1/red-flags/${testID}`)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .expect((res) =&gt; {
+        expect(res.body.message).to.eql('red-flag record has been deleted');
+        expect(res.body.id).to.eql(testID);
+      })
+      .end(done);
+  });
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 29 2018 21:18:50 GMT+0100 (West Africa Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
