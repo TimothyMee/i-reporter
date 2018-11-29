@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha Test/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'",
-    "lint": "eslint routes/**/*.js model/*.js helpers/*.js *.js"
+    "lint": "eslint routes/**/*.js model/*.js helpers/*.js *.js",
+    "start": "node index.js"
   },
   "author": "Timothy-Mee",
   "license": "ISC",
