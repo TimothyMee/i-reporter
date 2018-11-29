@@ -1,5 +1,6 @@
-# Created by .ignore support plugin (hsz.mobi)
+
+API
 node_modules
 package-lock.json
-API
+#package.json
 .idea
