@@ -8,7 +8,6 @@ function writeJSONFile(filename, content) {
     if (err) {
       return err;
     }
-    return true;
   });
 }
 

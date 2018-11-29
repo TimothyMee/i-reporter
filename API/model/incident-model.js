@@ -44,7 +44,7 @@ function createNew(incident, type) {
           resData.push(result.value);
           helper.writeJSONFile(`./data/${type}.json`, resData);
         })
-        .catch(() => {
+        .catch((err) => {
           helper.writeJSONFile(`./data/${type}.json`, [result.value]);
         });
 
