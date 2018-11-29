@@ -2,11 +2,11 @@
   "name": "ireporter",
   "version": "1.0.0",
   "description": "a reporting application",
-  "main": "API/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha API/Test/**/*.test.js",
+    "test": "mocha Test/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'",
-    "lint": "eslint API/routes/**/*.js API/model/*.js API/helpers/*.js *.js"
+    "lint": "eslint routes/**/*.js model/*.js helpers/*.js *.js"
   },
   "author": "Timothy-Mee",
   "license": "ISC",
