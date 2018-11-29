@@ -2,12 +2,13 @@
   "name": "ireporter",
   "version": "1.0.0",
   "description": "a reporting application",
-  "main": "API/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha Test/**/*.test.js --exit",
     "test-watch": "nodemon --exec 'npm test'",
     "lint": "eslint routes/**/*.js model/*.js helpers/*.js *.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "coverage": "nyc --cache istanbul cover _mocha Test/**/*.test.js --exit"
   },
   "author": "Timothy-Mee",
   "license": "ISC",
@@ -22,7 +23,9 @@
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "supertest": "^3.3.0"
   }
 }
