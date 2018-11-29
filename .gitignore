@@ -4,4 +4,5 @@ node_modules
 package-lock.json
 #package.json
 .idea
-coverage
+#coverage
+.nyc_output
