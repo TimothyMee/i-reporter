@@ -1,14 +1,13 @@
 language: node_js
 node_js:
-  - 8.5.0
+- stable
 script:
-  - "npm run lint"
-  - "npm run test"
-
+#- npm run lint
+- npm run test
 deploy:
   provider: heroku
   api_key:
-    secure: 2b175d52-ce57-4ab5-98e5-c16d2d6da047
+    secure: ZSQj46Kmn+H7QzkzXCRC0UhL71G+5u/ggFLfoe0MwiIJ5Z2TlqjPG/tPLdJw6QwI3IwoKt5KyHutei1tuFSwogwWwuHGliiFN4iDmfBsUK1Xv+q5yriOVyZLdSPNs4UHb0fPNGwSZN3eESLiCui+tGMapxppJuXDjAHjJNCRiBr9cumcI6Z2ra8pLXZsi24sIhAO4J9N+HoIoloxPQGk+Ix+X6ezD9mJHKaDli267O8bde/lDt1Pg43LvhL85/rp0dgxjIkOpf4RHB+GwwcaeiljWgeVoLPy0BmyWnJ8160/qmVugmuHR3ABKbZvyqmDL3T9D0QGIRRDzOxZVGh2L5dAQe8wOXKl68BWs6HLBz9aX8i7NEw3IHdnsowWg69X5BEkTxqL1+zNWnqRRTnRpKV4vueR/k81wHPDd7O5B6KBmw1lAdHW7rtybhI8WzdVF4MTy1g1llPGfvBH01udh9F0j9lWXH3JXpqGJxmen3JzYWXn1X1Wap4jZc7TMkO4zjxoy9Br0heFV/fgwHAF7AgNr2Waq+9SDnTwFVtAzTvHbJfb39q/YJvl8Nr/SpfRlqg7WRp852K54XdrVgrUy9SjsW3JfW8e5ldvvu/ryWJTET+wrjT42QGPkffelzVL7g0cTLGHW1T+EKkPeBKuyrwNCEuZzhtYcrVO9oE39eI=
   app: timothy-i-reporter
   on:
     repo: TimothyMee/i-reporter
