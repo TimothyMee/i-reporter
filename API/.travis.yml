@@ -12,4 +12,3 @@ deploy:
   app: timothy-i-reporter
   on:
     repo: TimothyMee/i-reporter
-ssssss
