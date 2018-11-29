@@ -10,7 +10,7 @@
     "start": "node index.js",
     "coverage": "istanbul cover _mocha -- --opts www/js/test-utils/mocha.opts Test/**/*.test.js --exit",
     "covera": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --opts www/js/test-utils/mocha.opts Test/**/*.test.js --exit -R spec",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Timothy-Mee",
   "license": "ISC",
