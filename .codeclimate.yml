@@ -35,4 +35,4 @@ checks:
       enabled: true
   exclude_patterns:
 - "/UI"
-- "coverage"
+- "/coverage"
