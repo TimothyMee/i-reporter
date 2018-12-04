@@ -16,68 +16,100 @@
     <link href="https://cdn.jsdelivr.net/npm/vue-video-player@5.0.0/src/custom-theme.css" rel="stylesheet">
 </head>
 <body>
-<div class="wrapper" id="app">
-    <div class="max-width animated fadeIn">
-        <div class="card card-xxl harsh-color no-margin-bottom">
-            <div class="light-green shadow-xs">
-                <a href="../home.html" class="">
-                    <h4 class="left-offset-1 text-white font-xs align-left">HOME / &nbsp;</h4>
-                </a>
-                <a href="index.html">
-                    <h4 class="text-white font-xs align-left">INTERVENTION /</h4>
-                </a>
-                <a href="#">
-                    <h4 class="text-white font-xs align-left"> &nbsp; view </h4>
-                </a>
-                <a href="../login.html">
-                    <!--<h4 class="text-white font-xs align-right">Logout</h4>-->
-                    <h4 class="text-white font-xs right-offset-1 align-right">logout</h4>
-                </a>
-            </div>
-            <div class="top-offset-1">
-                <div class="card card-sm harsh-color ">
-                    <div class="left-offset-1 border-right">
-                        <h3 class="font-sm">Name:</h3>
-                        <h4 class="label">Sample Intervention</h4>
+<div class="wrapper-harsh" id="app">
+        <div class="max-width">
+        <header>
+            <div class="card card-full harsh-color green-border-bottom">
+                <div class="card card-sm harsh-color border-right no-border-radius">
+                    <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
+                </div>
+                <div class="card card-md harsh-color left-offset-1">
+                    <div class="nav">
+                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
+                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="index.html">Intervention</a></h4>
+                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
                     </div>
                 </div>
 
-                <div class="">
-                    <div class="card card-lg harsh-color left-offset-1">
-                        <div class="right-offset-1 border-right">
-                            <h3 class="font-sm">Details:</h3>
-                            <p class="label right-offset-1">
-                                A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
-                                he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
-                                he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
-                                he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
-                                he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
-                                he is full of mischief
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card card-sm harsh-color">
-                        <div class="card harsh-color">
-                            <h3 class="font-sm">Status:</h3>
-                            <h1 class="label status-pending">Pending</h1>
-                        </div>
+                <div class="card card-xs align-right harsh-color">
+                    <a href="../Dashboard/user.html"><img src="../assets/images/avatar.jpg" alt="" class="profile-image align-right right-offset-3"></a>
+                </div>
+            </div>
+            <div class="card card-full harsh-color no-border">
+                <div class="card card-sm harsh-color no-border">&nbsp;</div>
+                <div class="card card-md harsh-color no-border left-offset-1">
+                    <div class="bread-crumbs">
+                        <h5 class="font-smallest">
+                            <i class="far fa-dot-circle"></i>
+                            <a href="../home.html" class="">&nbsp;HOME</a>
+                            /<a href="index.html">&nbsp;INTERVENTION</a>
+                            /<a href="#">&nbsp;{{pageName}}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
+        </header>
+        <div class="main-content">
+            <div class="card card-full harsh-color">
+                <div class="card card-sm harsh-color border-right">
+                    <ul>
+                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                                faint-black font-sl list hvr-icon-spin hvr-forward"
+                            @click="openContent('overview')">
+                            <span>Overview</span>
+                        </li>
+                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                                faint-black font-sl list hvr-icon-spin hvr-forward"
+                            @click="openContent('gallery')">
+                            <span>Gallery</span>
+                        </li>
+                    </ul>
+                </div>
 
-        </div>
-        <div class="card card-xxl harsh-color no-margin-top border-top">
-            <div class="top-offset-1">
-                <div class="card card-sm harsh-color ">
-                    <div class="top-offset-4 border-right">
-                        <h3 class="font-sm left-offset-1">Image:</h3>
-                        <img src="../assets/images/user.jpg" alt="" class="view-image">
+                <div v-if="showOverview" class="animated fadeIn card card-xl align-left harsh-color">
+                    <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left green-border-right">
+                        <h3 class="font-sm left-offset-1">Name:</h3>
+                        <p class="label left-offset-1 right-offset-1">
+                            Sample Intervention
+                        </p>
+                    </div>
+
+                    <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left green-border-right">
+                        <h3 class="font-sm left-offset-1">Details:</h3>
+                        <p class="label left-offset-1 right-offset-1">
+                            A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
+                            he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
+                            he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
+                            he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
+                            he is full of mischief.A simple intervention to report the fraudulent doing of my Timothy. Born on the 27th,
+                            he is full of mischief
+                        </p>
                     </div>
                 </div>
 
-                <div class="">
-                    <div class="card card-lg harsh-color left-offset-1">
-                        <div class="top-offset-2 border-right right-offset-1">
+                <div v-if="showOverview" class="animated fadeIn card card-xs harsh-color align-left">
+                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-2">
+                        <div class="left-offset-1 right-offset-1">
+                            <h3 class="label font-xs">Status:</h3>
+                            <h1 class="label font-xxs status-pending">Pending</h1>
+                        </div>
+                    </div>
+
+                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-3">
+                        <div class="card card-md align-left no-border left-offset-1">
+                            <h3 class="label font-xs">Lat:</h3>
+                            <h1 class="label font-xxs">102</h1>
+                        </div>
+                        <div class="card card-md align-right no-border">
+                            <h3 class="label font-xs">Log:</h3>
+                            <h1 class="label font-xxs">99</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="showGallery" class="animated fadeIn card card-xl harsh-color">
+                    <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left green-border-right">
+                        <div class="top-offset-2 border-right left-offset-1 bottom-offset-2">
                             <h3 class="font-sm left-offset-1">Video:</h3>
                             <video-player class="vjs-custom-skin right-offset-1"
                                           ref="videoPlayer"
@@ -87,18 +119,22 @@
                             </video-player>
                         </div>
                     </div>
-                    <div class="card card-sm harsh-color">
-                        <div class="top-offset-4 card harsh-color">
-                            <h3 class="font-sm">Geo-Location:</h3>
-                            <div class="right-offset-1">
-                                <h4 class="label">LAT: 90.00 || LONG: 190.00</h4>
-                            </div>
+                </div>
+                <div v-if="showGallery" class="animated fadeIn card card-xs harsh-color align-left">
+                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-2">
+                        <div class="top-offset-4">
+                            <h3 class="font-sm left-offset-1">Image:</h3>
+                            <img src="../assets/images/user.jpg" alt="" class="view-image">
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-
+        </div>
+        <footer>
+            <h4 class="font-smallest label text-white">&copy; 2018. Timothy Mee ---- iReporter</h4>
+        </footer>
     </div>
 </div>
 
@@ -115,6 +151,9 @@
         el: '#app',
         data(){
             return {
+                pageName: 'view',
+                showOverview:true,
+                showGallery:false,
                 playerOptions: {
                     height: '360',
                     width:'100',
@@ -131,7 +170,16 @@
             }
         },
         methods:{
-
+            openContent(name){
+                if(name === 'overview'){
+                    this.showGallery = false;
+                    this.showOverview = true;
+                }
+                else if(name === 'gallery'){
+                    this.showOverview = false;
+                    this.showGallery = true;
+                }
+            }
         },
         mounted(){
 

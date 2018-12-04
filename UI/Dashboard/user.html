@@ -14,87 +14,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
-<div class="wrapper" id="app">
+<div class="wrapper-harsh" id="app">
     <div class="max-width animated fadeIn">
-        <div class="card card-xxl harsh-color no-margin-bottom">
-            <div class="light-green shadow-xs">
-                <a href="../home.html" class="">
-                    <h4 class="left-offset-1 text-white font-xs align-left">HOME - &nbsp;</h4>
-                </a>
-                <a href="user.html">
-                    <h4 class="text-white font-xs align-left">User Dashboard</h4>
-                </a>
-                <a href="../login.html">
-                    <h4 class="text-white font-xs right-offset-1 align-right">logout</h4>
-                </a>
-            </div>
-            <div class="top-offset-1">
-                <div class="card card-sm left-offset-1 top-offset-2 bottom-offset-2 harsh-color">
-                    <a href="#" class="">
-                        <div class="white-bg">
-                            <div class="left-offset-1 bottom-offset-4">
-                                <h3 class="font-xs label text-align-center">No Of Resolved:</h3>
-                                <h1 class="left-offset-3 text-align-center">20</h1>
-                            </div>
-                        </div>
-                    </a>
-                    <br>
-                    <a href="#" class="">
-                        <div class="white-bg">
-                            <div class="left-offset-1 bottom-offset-4">
-                                <h3 class="font-xs label text-align-center">No Of Rejected:</h3>
-                                <h1 class="left-offset-3 text-align-center">20</h1>
-                            </div>
-                        </div>
-                    </a>
-                    <br>
-                    <a href="#" class="">
-                        <div class="white-bg">
-                            <div class="left-offset-1 bottom-offset-4">
-                                <h3 class="font-xs label text-align-center">No Of Pending:</h3>
-                                <h1 class="left-offset-3 text-align-center">20</h1>
-                            </div>
-                        </div>
-                    </a>
+        <header>
+            <div class="card card-full harsh-color green-border-bottom">
+                <div class="card card-sm harsh-color border-right no-border-radius">
+                    <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
+                </div>
+                <div class="card card-md harsh-color left-offset-1">
+                    <div class="nav">
+                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
+                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="index.html">Intervention</a></h4>
+                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
+                    </div>
                 </div>
 
-                <div class="card card-md left-offset-1 top-offset-2 bottom-offset-2">
-                    <div class="left-offset-1 right-offset-1 bottom-offset-3 top-offset-3">
-                        <h3 class="font-sm align-left">List Of Requests</h3>
-                        <select name="" id="" class="input-sm text-input align-right bottom-offset-2">
-                            <option value="">Resolved</option>
-                            <option value="">Rejected</option>
-                            <option value="">Pending</option>
-                        </select>
-                        <table class="table">
-                            <tr>
-                                <th>Name</th>
-                                <th>Details</th>
-                                <th>Status</th>
-                            </tr>
+                <div class="card card-xs align-right harsh-color">
+                    <a href="../Dashboard/user.html"><img src="../assets/images/avatar.jpg" alt="" class="profile-image align-right right-offset-3"></a>
+                </div>
+            </div>
 
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-pending">Pending</td>
-                            </tr>
+            <div class="card card-full harsh-color no-border">
+                <div class="card card-sm harsh-color no-border">&nbsp;</div>
+                <div class="card card-md harsh-color no-border left-offset-1">
+                    <div class="bread-crumbs">
+                        <h5 class="font-smallest">
+                            <i class="far fa-dot-circle"></i>
+                            <a href="#" class="">&nbsp;ADMIN</a>
+                            /<a href="#">&nbsp;Dashboard</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main-content">
+            <div class="card card-full harsh-color no-margin-bottom">
+                <div class="top-offset-1">
+                    <div class="card card-full harsh-color no-border top-offset-1">
+                        <div class="card card-sm left-offset-1">
+                            <a href="#" class="">
+                                <div class="white-bg">
+                                    <div class="left-offset-1 bottom-offset-4">
+                                        <h3 class="font-xs label text-align-center">No Of Resolved:</h3>
+                                        <h1 class="left-offset-3 text-align-center">20</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-correct">Resolved</td>
-                            </tr>
+                        <div class="card card-sm left-offset-1">
+                            <a href="#" class="">
+                                <div class="white-bg">
+                                    <div class="left-offset-1 bottom-offset-4">
+                                        <h3 class="font-xs label text-align-center">No Of Resolved:</h3>
+                                        <h1 class="left-offset-3 text-align-center">20</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-wrong">Rejected</td>
-                            </tr>
-                        </table>
+                        <div class="card card-sm left-offset-1">
+                            <a href="#" class="">
+                                <div class="white-bg">
+                                    <div class="left-offset-1 bottom-offset-4">
+                                        <h3 class="font-xs label text-align-center">No Of Resolved:</h3>
+                                        <h1 class="left-offset-3 text-align-center">20</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card card-xxl harsh-color left-offset-1 right-offset-1">
+                        <div class="bottom-offset-3 top-offset-3">
+                            <h3 class="font-sm align-left">List Of Requests</h3>
+                            <select name="" id="" class="input-xs text-input align-right bottom-offset-2">
+                                <option value="">Resolved</option>
+                                <option value="">Rejected</option>
+                                <option value="">Pending</option>
+                            </select>
+                            <table class="table">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-pending">Pending</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-correct">Resolved</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-wrong">Rejected</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer>
+            <h4 class="font-smallest label text-white">&copy; 2018. Timothy Mee ---- iReporter</h4>
+        </footer>
     </div>
 </div>
 

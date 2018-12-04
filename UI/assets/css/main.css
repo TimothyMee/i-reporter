@@ -1,13 +1,39 @@
 hr{
     color: #F2F2F2;
 }
-
 h4{
     color: #354154;
 }
-
 a{
     text-decoration: none;
+    color: #354154;
+}
+a:hover{
+    color: #00B549;
+    border-bottom: 2px solid;
+}
+body{
+    min-height: 100%;
+}
+footer{
+    flex-shrink: 0;
+    background-color: #393941;
+    text-align: center;
+    border-top: 1px solid #00D62F !important;
+    box-shadow: 0px 2px 2px #E4E6EB;
+    height: 10%;
+}
+.main-content{
+    flex: 1 0 auto;
+}
+
+.max-width{
+    width: inherit;
+    min-width:inherit;
+    max-width: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper{
@@ -19,7 +45,6 @@ a{
     bottom: 0px;
     right: 0px;
     background: linear-gradient(to right bottom, #A4CAA6, rgba(38, 82, 6, 0.94));
-    /*background: linear-gradient(to bottom right, #D7BBEA, #65A8F1);*/
     width:100%;
     min-width:100%;
     max-width:100%;
@@ -27,6 +52,33 @@ a{
     overflow: auto;
 }
 
+.wrapper-harsh{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #F1F3F8;
+    width:100%;
+    min-width:100%;
+    max-width:100%;
+    height: auto;
+    overflow: auto;
+}
+
+.nav{
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 0px;
+}
+.bread-crumbs{
+    width: 100%;
+    min-width: 100%;
+    margin-top: 0px;
+    clear: both;
+}
 
 .card{
     background-color: white;
@@ -40,13 +92,25 @@ a{
     min-width:60%;
     height: auto;
 }
-.card-xxl{
-    width:90%;
-    min-width:90%;
-    margin: 2% 5%;
+.card-xl-plus1{
+    width:70%;
+    min-width:70%;
     height: auto;
 }
-.card-md{
+.card-xxl{
+    width:80%;
+    min-width:80%;
+    margin: 1% 5%;
+    height: auto;
+}
+.card-full{
+    width:100%;
+    min-width:100%;
+    margin: 0% 0%;
+    height: auto;
+    padding:0px 0px;
+}
+.card-lg{
     width:50%;
     min-width:50%;
     height: auto;
@@ -61,7 +125,7 @@ a{
     min-width:15%;
     height: auto;
 }
-.card-lg{
+.card-md{
     width:40%;
     min-width:40%;
     height: auto;
@@ -86,17 +150,17 @@ a{
     .view-image, .card-img {
         width: 100%;
     }
-    .card, .card-lg, .card-xl, .card-sm, .card-xxl, .card-xs{
-        width: 80%;
+    .card-lg, .card-xl, .card-sm, .card-xxl, .card-xs, .card-full, .card-md{
+        width: 80% !important;
         margin-right:5%;
         margin-left:5%;
     }
 
     .left-offset-1, .left-offset-2,.left-offset-3{
-        margin-left:0%;
+        margin-left:0px;
     }
     .right-offset-1, .right-offset-2,.right-offset-3{
-        margin-right:0%;
+        margin-right:0px;
     }
 
 }
@@ -106,20 +170,46 @@ a{
     width: 80%;
     margin: 0%10%;
 }
+.profile-image{
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid #E4E6EB;
+    margin: 5%10%;
+}
 .border-right{
-    border-right: 2px solid #E4E6EB !important;
+    border-right: 1px solid #E4E6EB !important;
 }
 .border-left{
-    border-left: 2px solid #E4E6EB !important;
+    border-left: 1px solid #E4E6EB !important;
 }
 .border-bottom{
-    border-bottom: 2px solid #E4E6EB !important;
+    border-bottom: 1px solid #E4E6EB !important;
 }
 .border-top{
-    border-top: 2px solid #E4E6EB !important;
+    border-top: 1px solid #E4E6EB !important;
 }
-
-
+.green-border-bottom{
+    border-bottom: 1px solid #00D62F !important;
+    box-shadow: 2px 2px 2px #E4E6EB;
+}
+.green-top-bottom{
+    border-top: 1px solid #00D62F !important;
+    box-shadow: 2px 2px 2px #E4E6EB;
+}
+.green-border-left{
+    border-left: 1px solid #00D62F !important;
+    box-shadow: 2px 2px 2px #E4E6EB;
+}
+.green-border-right{
+    border-right: 1px solid #00D62F !important;
+    box-shadow: 2px 2px 2px #E4E6EB;
+}
+.no-border-radius{
+    border-radius: 0px !important;
+}
+.no-border{
+    border: 0px !important;
+}
 
 
 
@@ -180,26 +270,6 @@ a{
     margin-bottom: 45%;
 }
 
-
-
-
-
-
-
-
-.max-width{
-    width: inherit;
-    min-width:inherit;
-    max-width: inherit;
-    margin-bottom: 5%;
-}
-
-
-
-
-
-
-
 .list{
     padding:10%2%;
     margin-top:5%;
@@ -229,6 +299,23 @@ a{
 
 }
 
+.font-xxs{
+    font-size: 18px;
+    font-family: "Avenir Next W01", "Proxima Nova W01", "Rubik", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: lighter;
+}
+.font-smallest{
+    font-size: 12px;
+    font-family: "Avenir Next W01", "Proxima Nova W01", "Rubik", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.font-sm{
+    font-size: 21px;
+    font-family: "Avenir Next W01", "Proxima Nova W01", "Rubik", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+}
+
 
 
 
@@ -236,7 +323,7 @@ a{
 
 .text-input{
     font-size:100%;
-    padding:4%;
+    padding:2.5%;
     width: inherit;
     border:1px solid #DCE0EC;
     font-family: "Avenir Next W01", "Proxima Nova W01", "Rubik", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -356,6 +443,9 @@ a{
 }
 .no-margin-top{
     margin-top: 0% !important;
+}
+.no-margin-left{
+    margin-left: 0% !important;
 }
 .align-left{
     float: left;

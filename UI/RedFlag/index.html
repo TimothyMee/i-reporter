@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Red Flag - Index</title>
+    <title>RedFlag - Index</title>
     <meta charset="UTF-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="report, reporter, ireporter, timothy" name="keywords">
@@ -14,263 +14,280 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
-<div class="wrapper" id="app">
+<div class="wrapper-harsh" id="app">
     <div class="max-width">
-        <div class="card card-xxl harsh-color">
-            <div class="light-green shadow-xs">
-                <a href="../home.html" class="">
-                    <h4 class="left-offset-1 text-white font-xs align-left">HOME / &nbsp;</h4>
-                </a>
-                <a href="index.html">
-                    <h4 class="text-white font-xs align-left">RED FLAG</h4>
-                </a>
-                <a href="../login.html">
-                    <!--<h4 class="text-white font-xs align-right">Logout</h4>-->
-                    <h4 class="text-white font-xs right-offset-1 align-right">logout</h4>
-                </a>
+        <header>
+            <div class="card card-full harsh-color green-border-bottom">
+                <div class="card card-sm harsh-color border-right no-border-radius">
+                    <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
+                </div>
+                   <div class="card card-md harsh-color left-offset-1">
+                       <div class="nav">
+                           <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
+                           <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
+                           <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="index.html">Red-Flag</a></h4>
+                       </div>
+                   </div>
+
+                   <div class="card card-xs align-right harsh-color">
+                       <a href="../Dashboard/user.html"><img src="../assets/images/avatar.jpg" alt="" class="profile-image align-right right-offset-3"></a>
+                   </div>
             </div>
-            <div class="top-offset-1">
-                <div class="card card-sm harsh-color border-right">
-                    <ul>
-                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
-                                    faint-black font-sl list hvr-icon-spin hvr-forward"
-                            @click="openContent('new')">
-
-                            <i class="fas fa-plus hvr-icon"></i>
-                            <span>New Flag</span>
-                        </li>
-                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
-                                    faint-black font-sl list hvr-icon-spin hvr-forward"
-                            @click="openContent('delete')">
-                            <i class="far fa-trash-alt hvr-icon"></i>
-                            <span>Delete Flag</span>
-                        </li>
-                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
-                                    faint-black font-sl list hvr-icon-spin hvr-forward"
-                            @click="openContent('view')">
-                            <i class="far fa-eye hvr-icon"></i>
-                            <span>View Flags</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div v-if="newFlag" class="animated fadeIn">
-                    <div class="card card-lg harsh-color left-offset-1">
-                        <form class="top-offset-2">
-                            <div class="right-offset-1 max-width">
-                                <label for="name" class="label">Name:</label>
-                                <br>
-                                <input type="text" id="name" class="text-input input-lg" placeholder="Enter a name for the flag">
-                            </div>
-
-                            <div class="right-offset-1 max-width">
-                                <label for="details" class="label">Details:</label>
-                                <br>
-                                <textarea id="details" cols="30" rows="10" class="text-input input-lg"
-                                          placeholder="Enter details for the red flag">
-                                </textarea>
-                            </div>
-
-                            <div class="right-offset-1 max-width">
-                                <label for="location" class="label">Geo-Location:</label>
-                                <br>
-                                <input type="text" id="location" class="text-input input-xs" placeholder="long">
-                                <input type="text" id="location" class="text-input input-xs" placeholder="lat">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="card card-sm harsh-color">
-                        <form class="top-offset-2">
-                            <div class="card right-offset-1 max-width harsh-color">
-                                <label for="name" class="label">Upload Image:</label>
-                                <br>
-                                <div class="upload-btn-wrapper top-offset-2">
-                                    <button class="upload-btn">Upload <i class="far fa-image"></i></button>
-                                    <input type="file" name="myfile"/>
-                                </div>
-                            </div>
-
-                            <div class="card right-offset-1 max-width harsh-color">
-
-                                <label for="details" class="label">Upload Video :</label>
-                                <br>
-                                <div class="upload-btn-wrapper top-offset-2">
-                                    <button class="upload-btn">Upload <i class="fas fa-video"></i></button>
-                                    <input type="file" name="myfile"/>
-                                </div>
-                            </div>
-
-                            <div class="card card-sm right-offset-1 max-width harsh-color">
-                                <hr class="top-offset-4 bottom-offset-3">
-                                <button class="button btn-xl top-offset-2">Create Red Flag</button>
-                            </div>
-                        </form>
+            <div class="card card-full harsh-color no-border">
+                <div class="card card-sm harsh-color no-border">&nbsp;</div>
+                <div class="card card-md harsh-color no-border left-offset-1">
+                    <div class="bread-crumbs">
+                        <h5 class="font-smallest">
+                            <i class="far fa-dot-circle"></i>
+                            <a href="../home.html" class="">&nbsp;HOME</a>
+                            /<a href="index.html">&nbsp;RED FLAG</a>
+                            /<a href="#">&nbsp;{{pageName}}</a>
+                        </h5>
                     </div>
                 </div>
-
-                <div v-if="viewFlag" class="animated fadeIn">
-                    <div class="card card-xl harsh-color">
-                        <h4 class="left-offset-1 font-xs">All Red Flags</h4>
-                        <hr class="bottom-offset-1">
-                        <table class="table">
-                            <tr>
-                                <th>Name</th>
-                                <th>Details</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-pending">Pending</td>
-                                <td>
-                                    <a href="view.html" class="left-offset-1"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="left-offset-1"><i class="far fa-trash-alt"></i></a>
-                                    <a href="edit.html" class="left-offset-1"><i class="far fa-edit"></i></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-correct">Resolved</td>
-                                <td>
-                                    <a href="view.html" class="left-offset-1"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="left-offset-1"><i class="far fa-trash-alt"></i></a>
-                                    <a href="edit.html" class="left-offset-1"><i class="far fa-edit"></i></a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-wrong">Rejected</td>
-                                <td>
-                                    <a href="view.html" class="left-offset-1"><i class="far fa-eye"></i></a>
-                                    <a href="#" class="left-offset-1"><i class="far fa-trash-alt"></i></a>
-                                    <a href="edit.html" class="left-offset-1"><i class="far fa-edit"></i></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="card card-xs harsh-color">
+            </div>
+        </header>
+        <div class="main-content">
+            <div class="card card-full harsh-color">
+                <div class="top-offset-1">
+                    <div class="card card-sm harsh-color border-right">
                         <ul>
-                            <h4>Filters</h4>
-                            <li class="top-offset-1 border-bottom right-offset-1
-                                    faint-black font-sl list"
+                            <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                                    faint-black font-sl list hvr-icon-spin hvr-forward"
                                 @click="openContent('new')">
-                                <span>Resolved Flags</span>
+
+                                <i class="fas fa-plus hvr-icon"></i>
+                                <span>New RedFlag</span>
                             </li>
-                            <li class="top-offset-1 border-bottom right-offset-1
-                                    faint-black font-sl list"
+                            <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                                    faint-black font-sl list hvr-icon-spin hvr-forward"
                                 @click="openContent('delete')">
-                                <span>Pending Flags</span>
+                                <i class="far fa-trash-alt hvr-icon"></i>
+                                <span>Delete RedFlag</span>
                             </li>
-                            <li class="top-offset-1 border-bottom right-offset-1
-                                    faint-black font-sl list"
+                            <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                                    faint-black font-sl list hvr-icon-spin hvr-forward"
                                 @click="openContent('view')">
-                                <span>Rejected Flags</span>
+                                <i class="far fa-eye hvr-icon"></i>
+                                <span>View RedFlags</span>
                             </li>
                         </ul>
                     </div>
-                </div>
 
-                <div v-if="deleteFlag" class="animated fadeIn">
-                    <div class="card card-xl harsh-color">
-                        <h4 class="left-offset-1 font-xs">Delete Red Flags</h4>
-                        <hr class="bottom-offset-1">
-                        <table class="table">
-                            <tr>
-                                <th>Name</th>
-                                <th>Details</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                    <div v-if="newRedFlag" class="animated fadeIn card card-xl-plus1 harsh-color">
+                        <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left">
+                            <form class="top-offset-2 left-offset-2">
+                                <div class="top-offset-1">
+                                    <label for="name" class="label">Name:</label>
+                                    <br>
+                                    <input type="text" id="name" class="text-input input-lg" placeholder="Enter a name for the RedFlag">
+                                </div>
 
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-pending">Pending</td>
-                                <td>
-                                    <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                                <div class="top-offset-2">
+                                    <label for="details" class="label">Details:</label>
+                                    <br>
+                                    <textarea id="details" cols="30" rows="10" class="text-input input-lg"
+                                              placeholder="Enter details for the RedFlag">
+                                    </textarea>
+                                </div>
 
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-correct">Resolved</td>
-                                <td>
-                                    <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                                <div class="top-offset-1 bottom-offset-2 card card-full no-border">
+                                    <div class="upload-btn-wrapper align-left top-offset-2">
+                                        <label for="location" class="label">Images:</label>
+                                        <br>
+                                        <button class="upload-btn">Upload <i class="far fa-image"></i></button>
+                                        <input type="file" name="myfile"/>
+                                    </div>
+                                    <div class="upload-btn-wrapper align-left left-offset-3 top-offset-2">
+                                        <label for="location" class="label">Videos:</label>
+                                        <br>
+                                        <button class="upload-btn">Upload <i class="far fa-image"></i></button>
+                                        <input type="file" name="myfile"/>
+                                    </div>
+                                </div>
 
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-wrong">Rejected</td>
-                                <td>
-                                    <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                        </table>
+                                <div class="top-offset-2">
+                                    <label for="location" class="label">Geo-Location:</label>
+                                    <br>
+                                    <input type="text" id="location" class="text-input input-xs align-left" placeholder="long">
+                                    <input type="text" id="location" class="text-input input-xs align-left" placeholder="lat">
+                                </div>
 
-                        <br><br>
-
-                        <h4 class="left-offset-1 font-xs top-offset-2">Deleted Flags</h4>
-                        <hr class="bottom-offset-2">
-                        <table class="table bottom-offset-3">
-                            <tr>
-                                <th>Name</th>
-                                <th>Details</th>
-                                <th>Status</th>
-                            </tr>
-
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-pending">Pending</td>
-                            </tr>
-
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-correct">Resolved</td>
-                            </tr>
-
-                            <tr>
-                                <td>Timothy</td>
-                                <td>Timothy is working on his system a lot</td>
-                                <td class="status-wrong">Rejected</td>
-                            </tr>
-                        </table>
+                                <br><br>
+                                <br><br>
+                                <div class="bottom-offset-2">
+                                    <button class="button top-offset-2 btn-lg left-offset-1 right-offset-1">Create RedFlag</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="card card-xs harsh-color">
-                        <ul>
-                            <h4>Filters</h4>
-                            <li class="top-offset-1 border-bottom right-offset-1
-                                    faint-black font-sl list"
-                                @click="openContent('new')">
-                                <span>Resolved Flags</span>
-                            </li>
-                            <li class="top-offset-1 border-bottom right-offset-1
-                                    faint-black font-sl list"
-                                @click="openContent('delete')">
-                                <span>Pending Flags</span>
-                            </li>
-                            <li class="top-offset-1 border-bottom right-offset-1
-                                    faint-black font-sl list"
-                                @click="openContent('view')">
-                                <span>Rejected Flags</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
+                    <div v-if="viewRedFlag" class="animated fadeIn">
+                        <div class="card card-xl harsh-color">
+                            <h4 class="left-offset-1 font-xs">All RedFlags</h4>
+                            <hr class="bottom-offset-1">
+                            <table class="table">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-pending">Pending</td>
+                                    <td>
+                                        <a href="view.html" class="left-offset-1"><i class="far fa-eye"></i></a>
+                                        <a href="#" class="left-offset-1"><i class="far fa-trash-alt"></i></a>
+                                        <a href="edit.html" class="left-offset-1"><i class="far fa-edit"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-correct">Resolved</td>
+                                    <td>
+                                        <a href="view.html" class="left-offset-1"><i class="far fa-eye"></i></a>
+                                        <a href="#" class="left-offset-1"><i class="far fa-trash-alt"></i></a>
+                                        <a href="edit.html" class="left-offset-1"><i class="far fa-edit"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-wrong">Rejected</td>
+                                    <td>
+                                        <a href="view.html" class="left-offset-1"><i class="far fa-eye"></i></a>
+                                        <a href="#" class="left-offset-1"><i class="far fa-trash-alt"></i></a>
+                                        <a href="edit.html" class="left-offset-1"><i class="far fa-edit"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="card card-xs harsh-color">
+                            <ul>
+                                <h4>Filters</h4>
+                                <li class="top-offset-1 border-bottom right-offset-1
+                                    faint-black font-sl list"
+                                    @click="openContent('new')">
+                                    <span>Resolved RedFlags</span>
+                                </li>
+                                <li class="top-offset-1 border-bottom right-offset-1
+                                    faint-black font-sl list"
+                                    @click="openContent('delete')">
+                                    <span>Pending RedFlags</span>
+                                </li>
+                                <li class="top-offset-1 border-bottom right-offset-1
+                                    faint-black font-sl list"
+                                    @click="openContent('view')">
+                                    <span>Rejected RedFlags</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div v-if="deleteRedFlag" class="animated fadeIn">
+                        <div class="card card-xl harsh-color">
+                            <h4 class="left-offset-1 font-xs">Delete RedFlags</h4>
+                            <hr class="bottom-offset-1">
+                            <table class="table">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-pending">Pending</td>
+                                    <td>
+                                        <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-correct">Resolved</td>
+                                    <td>
+                                        <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-wrong">Rejected</td>
+                                    <td>
+                                        <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br><br>
+
+                            <h4 class="left-offset-1 font-xs top-offset-2">Deleted RedFlags</h4>
+                            <hr class="bottom-offset-2">
+                            <table class="table bottom-offset-3">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-pending">Pending</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-correct">Resolved</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Timothy</td>
+                                    <td>Timothy is working on his system a lot</td>
+                                    <td class="status-wrong">Rejected</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="card card-xs harsh-color">
+                            <ul>
+                                <h4>Filters</h4>
+                                <li class="top-offset-1 border-bottom right-offset-1
+                                    faint-black font-sl list"
+                                    @click="openContent('new')">
+                                    <span>Resolved RedFlags</span>
+                                </li>
+                                <li class="top-offset-1 border-bottom right-offset-1
+                                    faint-black font-sl list"
+                                    @click="openContent('delete')">
+                                    <span>Pending RedFlags</span>
+                                </li>
+                                <li class="top-offset-1 border-bottom right-offset-1
+                                    faint-black font-sl list"
+                                    @click="openContent('view')">
+                                    <span>Rejected RedFlags</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-
+        <footer>
+            <h4 class="font-smallest label text-white">&copy; 2018. Timothy Mee ---- iReporter</h4>
+        </footer>
     </div>
 </div>
 
@@ -282,31 +299,36 @@
         el: '#app',
         data(){
             return {
-                newFlag: true,
-                viewFlag: false,
-                deleteFlag: false,
+                newRedFlag: true,
+                viewRedFlag: false,
+                deleteRedFlag: false,
+                pageName:'new'
             }
         },
         methods:{
             openContent(name){
                 if(name === 'new'){
-                    this.viewFlag = false;
-                    this.deleteFlag = false;
-                    this.newFlag = true;
+                    this.viewRedFlag = false;
+                    this.deleteRedFlag = false;
+                    this.newRedFlag = true;
+                    this.pageName = name;
                 }
                 else if(name === 'view'){
-                    this.newFlag = false;
-                    this.deleteFlag = false;
-                    this.viewFlag = true;
+                    this.deleteRedFlag = false;
+                    this.newRedFlag = false;
+                    this.viewRedFlag = true;
+                    this.pageName = name;
                 }
                 else if(name === 'delete'){
-                    this.newFlag = false;
-                    this.viewFlag = false;
-                    this.deleteFlag = true;
+                    this.viewRedFlag = false;
+                    this.newRedFlag = false;
+                    this.deleteRedFlag = true;
+                    this.pageName = name;
                 }
             }
         },
         mounted(){
+
         }
     })
 </script>
