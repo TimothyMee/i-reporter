@@ -7,7 +7,8 @@
     "test": "mocha test/*.spec.js --require @babel/register --exit",
     "test-watch": "nodemon --exec 'npm test'",
     "lint": "eslint ./server/**/**.js",
-    "start": "nodemon index.js --watch server --exec babel-node",
+    "start--nodemon": "nodemon index.js --watch server --exec babel-node",
+    "start": "babel-node index.js --presets @babel/env",
     "coverage": "node_modules/.bin/nyc --require @babel/register node_modules/.bin/mocha test/*.spec.js --exit",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
