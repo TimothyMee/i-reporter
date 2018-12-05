@@ -1,6 +1,7 @@
-const expect = require('expect.js');
-const request = require('supertest');
-const { app } = require('../index');
+import request from 'supertest';
+import expect from 'expect.js';
+
+import app from '../index';
 
 let testID = 1;
 
@@ -45,9 +46,10 @@ describe('Red-flag test (Post "/api/v1/red-flags")', () => {
       .post('/api/v1/red-flags')
       .send(testText)
       .expect(400)
-      .expect('Content-Type', /text/)
+      .expect('Content-Type', /json/)
       .expect((res) => {
-        expect(res.text).to.eql('"createdBy" must be a number');
+          const error = JSON.parse(res.text);
+          expect(error.error).to.eql('"createdBy" must be a number');
       })
       .end(done);
   });
@@ -104,9 +106,10 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () => {
       .patch(`/api/v1/red-flags/${testID}/location`)
       .send(newComment)
       .expect(400)
-      .expect('Content-Type', /text/)
+      .expect('Content-Type', /json/)
       .expect((res) => {
-        expect(res.text).to.eql('update data is wrong. check data');
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('update data is wrong. check data');
       })
       .end(done);
   });
@@ -119,9 +122,10 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () => {
       .patch('/api/v1/red-flags/0/location')
       .send(newComment)
       .expect(404)
-      .expect('Content-Type', /text/)
+      .expect('Content-Type', /json/)
       .expect((res) => {
-        expect(res.text).to.eql('could not find record with id in red-flags');
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('could not find record with id in red-flags');
       })
       .end(done);
   });
@@ -152,9 +156,10 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () => {
       .patch(`/api/v1/red-flags/${testID}/comment`)
       .send(newComment)
       .expect(400)
-      .expect('Content-Type', /text/)
+      .expect('Content-Type', /json/)
       .expect((res) => {
-        expect(res.text).to.eql('update data is wrong. check data');
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('update data is wrong. check data');
       })
       .end(done);
   });
@@ -167,9 +172,10 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () => {
       .patch('/api/v1/red-flags/0/comment')
       .send(newComment)
       .expect(404)
-      .expect('Content-Type', /text/)
+      .expect('Content-Type', /json/)
       .expect((res) => {
-        expect(res.text).to.eql('could not find record with id in red-flags');
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('could not find record with id in red-flags');
       })
       .end(done);
   });

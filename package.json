@@ -4,11 +4,11 @@
   "description": "a reporting application",
   "main": "index.js",
   "scripts": {
-    "test": "mocha Test/**/*.test.js --exit",
+    "test": "mocha test/*.spec.js --require @babel/register --exit",
     "test-watch": "nodemon --exec 'npm test'",
     "lint": "eslint routes/**/*.js model/*.js helpers/*.js *.js",
-    "start": "node index.js",
-    "coverage": "istanbul cover _mocha -- --opts www/js/test-utils/mocha.opts Test/**/*.test.js --exit",
+    "start": "nodemon index.js --watch server --exec babel-node",
+    "coverage": "istanbul cover _mocha -- --opts www/js/test-utils/mocha.opts test/*.spec.js --exit",
     "covera": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --opts www/js/test-utils/mocha.opts Test/**/*.test.js --exit -R spec",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
@@ -24,6 +24,12 @@
     "joi": "^14.3.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0",
+    "babel-register": "^6.26.0",
     "coveralls": "^3.0.2",
     "expect.js": "^0.3.1",
     "istanbul": "^0.4.5",
