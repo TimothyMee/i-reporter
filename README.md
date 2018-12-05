@@ -1,4 +1,4 @@
-# i-reporter   [![Build Status](https://travis-ci.org/TimothyMee/i-reporter.svg?branch=develop)](https://travis-ci.org/TimothyMee/i-reporter)    [![Maintainability](https://api.codeclimate.com/v1/badges/9ea2f068b8bda5251ea6/maintainability)](https://codeclimate.com/github/TimothyMee/i-reporter/maintainability) [![Coverage Status](https://coveralls.io/repos/github/TimothyMee/i-reporter/badge.svg?branch=develop)](https://coveralls.io/github/TimothyMee/i-reporter?branch=develop)
+# iReporter   [![Build Status](https://travis-ci.org/TimothyMee/i-reporter.svg?branch=develop)](https://travis-ci.org/TimothyMee/i-reporter)    [![Maintainability](https://api.codeclimate.com/v1/badges/9ea2f068b8bda5251ea6/maintainability)](https://codeclimate.com/github/TimothyMee/i-reporter/maintainability) [![Coverage Status](https://coveralls.io/repos/github/TimothyMee/i-reporter/badge.svg?branch=develop)](https://coveralls.io/github/TimothyMee/i-reporter?branch=develop)
 
 iReporter enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the
 general public. Users can also report on things that needs government intervention
