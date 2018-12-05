@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
-<div class="wrapper-harsh" id="app">
+<div class="wrapper-harsh harsh-color " id="app">
     <div class="max-width">
         <header>
-            <div class="card card-full harsh-color green-border-bottom">
-                <div class="card card-sm harsh-color border-right no-border-radius">
+            <div class="card card-full header-harsh green-border-bottom">
+                <div class="card card-sm header-harsh border-right no-border-radius">
                     <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
                 </div>
-                   <div class="card card-md harsh-color left-offset-1">
+                   <div class="card card-md header-harsh left-offset-1">
                        <div class="nav">
                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
@@ -29,7 +29,7 @@
                        </div>
                    </div>
 
-                   <div class="card card-xs align-right harsh-color">
+                   <div class="card card-xs align-right header-harsh">
                        <div class="dropdown">
                            <a href="#" class="">
                                <img src="../assets/images/avatar.jpg" alt="" class="dropbtn profile-image align-right right-offset-3">
@@ -58,24 +58,30 @@
         <div class="main-content">
             <div class="card card-full harsh-color">
                 <div class="top-offset-1">
-                    <div class="card card-sm harsh-color border-right">
+                    <div class="card card-sm harsh-color border-right shadow">
                         <ul>
                             <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
                                     faint-black font-sl list hvr-icon-spin hvr-forward"
-                                @click="openContent('new')">
+                                @click="openContent('new')"
+                                :class="createColor"
+                            >
 
                                 <i class="fas fa-plus hvr-icon"></i>
                                 <span>New RedFlag</span>
                             </li>
                             <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
                                     faint-black font-sl list hvr-icon-spin hvr-forward"
-                                @click="openContent('delete')">
+                                @click="openContent('delete')"
+                                :class="deleteColor"
+                            >
                                 <i class="far fa-trash-alt hvr-icon"></i>
                                 <span>Delete RedFlag</span>
                             </li>
                             <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
                                     faint-black font-sl list hvr-icon-spin hvr-forward"
-                                @click="openContent('view')">
+                                @click="openContent('view')"
+                                :class="viewColor"
+                            >
                                 <i class="far fa-eye hvr-icon"></i>
                                 <span>View RedFlags</span>
                             </li>
@@ -83,7 +89,7 @@
                     </div>
 
                     <div v-if="newRedFlag" class="animated fadeIn card card-xl-plus1 harsh-color">
-                        <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left">
+                        <div class="card card-xxl left-offset-1 shadow">
                             <form class="top-offset-2 left-offset-2">
                                 <div class="top-offset-1">
                                     <label for="name" class="label">Name:</label>
@@ -241,7 +247,7 @@
                             <br><br>
 
                             <h4 class="left-offset-1 font-xs top-offset-2">Deleted RedFlags</h4>
-                            <hr class="bottom-offset-2">
+                            <hr class="bottom-offset-1">
                             <table class="table bottom-offset-3">
                                 <tr>
                                     <th>Name</th>
@@ -310,7 +316,10 @@
                 newRedFlag: true,
                 viewRedFlag: false,
                 deleteRedFlag: false,
-                pageName:'new'
+                pageName:'new',
+                createColor: 'green-color',
+                deleteColor: '',
+                viewColor: ''
             }
         },
         methods:{
@@ -320,18 +329,30 @@
                     this.deleteRedFlag = false;
                     this.newRedFlag = true;
                     this.pageName = name;
+
+                    this.createColor = 'green-color';
+                    this.deleteColor = '';
+                    this.viewColor = '';
                 }
                 else if(name === 'view'){
                     this.deleteRedFlag = false;
                     this.newRedFlag = false;
                     this.viewRedFlag = true;
                     this.pageName = name;
+
+                    this.createColor = '';
+                    this.deleteColor = '';
+                    this.viewColor = 'green-color';
                 }
                 else if(name === 'delete'){
                     this.viewRedFlag = false;
                     this.newRedFlag = false;
                     this.deleteRedFlag = true;
                     this.pageName = name;
+
+                    this.createColor = '';
+                    this.deleteColor = 'green-color';
+                    this.viewColor = '';
                 }
             }
         },

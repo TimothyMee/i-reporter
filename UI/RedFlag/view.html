@@ -16,14 +16,14 @@
     <link href="https://cdn.jsdelivr.net/npm/vue-video-player@5.0.0/src/custom-theme.css" rel="stylesheet">
 </head>
 <body>
-<div class="wrapper-harsh" id="app">
-        <div class="max-width">
+<div class="wrapper-harsh harsh-color" id="app">
+    <div class="max-width">
         <header>
-            <div class="card card-full harsh-color green-border-bottom">
-                <div class="card card-sm harsh-color border-right no-border-radius">
+            <div class="card card-full header-harsh green-border-bottom">
+                <div class="card card-sm header-harsh border-right no-border-radius">
                     <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
                 </div>
-                <div class="card card-md harsh-color left-offset-1">
+                <div class="card card-md header-harsh left-offset-1">
                     <div class="nav">
                         <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
                         <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="card card-xs align-right harsh-color">
+                <div class="card card-xs align-right header-harsh">
                     <div class="dropdown">
                         <a href="#" class="">
                             <img src="../assets/images/avatar.jpg" alt="" class="dropbtn profile-image align-right right-offset-3">
@@ -60,30 +60,32 @@
         </header>
         <div class="main-content">
             <div class="card card-full harsh-color">
-                <div class="card card-sm harsh-color border-right">
+                <div class="card card-sm harsh-color border-right shadow">
                     <ul>
                         <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
                                 faint-black font-sl list hvr-icon-spin hvr-forward"
-                            @click="openContent('overview')">
+                            @click="openContent('overview')"
+                            :class="overviewColor"
+                        >
                             <span>Overview</span>
                         </li>
                         <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
                                 faint-black font-sl list hvr-icon-spin hvr-forward"
-                            @click="openContent('gallery')">
+                            @click="openContent('gallery')"
+                            :class="galleryColor"
+                        >
                             <span>Gallery</span>
                         </li>
                     </ul>
                 </div>
 
                 <div v-if="showOverview" class="animated fadeIn card card-xl align-left harsh-color">
-                    <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left green-border-right">
+                    <div class="card card-xxl left-offset-1 shadow">
                         <h3 class="font-sm left-offset-1">Name:</h3>
                         <p class="label left-offset-1 right-offset-1">
                             Sample RedFlag
                         </p>
-                    </div>
-
-                    <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left green-border-right">
+                        <hr>
                         <h3 class="font-sm left-offset-1">Details:</h3>
                         <p class="label left-offset-1 right-offset-1">
                             A simple RedFlag to report the fraudulent doing of my Timothy. Born on the 27th,
@@ -97,14 +99,12 @@
                 </div>
 
                 <div v-if="showOverview" class="animated fadeIn card card-xs harsh-color align-left">
-                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-2">
+                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-2 shadow">
                         <div class="left-offset-1 right-offset-1">
                             <h3 class="label font-xs">Status:</h3>
                             <h1 class="label font-xxs status-pending">Pending</h1>
                         </div>
-                    </div>
-
-                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-3">
+                        <hr>
                         <div class="card card-md align-left no-border left-offset-1">
                             <h3 class="label font-xs">Lat:</h3>
                             <h1 class="label font-xxs">102</h1>
@@ -117,7 +117,7 @@
                 </div>
 
                 <div v-if="showGallery" class="animated fadeIn card card-xl harsh-color">
-                    <div class="card card-xxl left-offset-1 green-border-bottom green-top-bottom green-border-left green-border-right">
+                    <div class="card card-xxl left-offset-1 shadow">
                         <div class="top-offset-2 border-right left-offset-1 bottom-offset-2">
                             <h3 class="font-sm left-offset-1">Video:</h3>
                             <video-player class="vjs-custom-skin right-offset-1"
@@ -139,7 +139,6 @@
                 </div>
 
             </div>
-        </div>
         </div>
         <footer>
             <h4 class="font-smallest label text-white">&copy; 2018. Timothy Mee ---- iReporter</h4>
@@ -163,6 +162,8 @@
                 pageName: 'view',
                 showOverview:true,
                 showGallery:false,
+                galleryColor:'',
+                overviewColor:'green-color',
                 playerOptions: {
                     height: '360',
                     width:'100',
@@ -183,10 +184,14 @@
                 if(name === 'overview'){
                     this.showGallery = false;
                     this.showOverview = true;
+                    this.galleryColor = '';
+                    this.overviewColor = 'green-color';
                 }
                 else if(name === 'gallery'){
                     this.showOverview = false;
                     this.showGallery = true;
+                    this.galleryColor = 'green-color';
+                    this.overviewColor = '';
                 }
             }
         },
