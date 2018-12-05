@@ -1,6 +1,7 @@
-const expect = require('expect.js');
-const request = require('supertest');
-const { app } = require('../index');
+import request from 'supertest';
+import expect from 'expect.js';
+
+import app from '../index';
 
 let testID = 1;
 
@@ -22,11 +23,12 @@ describe('Red-flag test (Post "/api/v1/red-flags")', () => {
       .send(testText)
       .expect(201)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('Created red-flag record');
         testID = res.body.id;
-      })
-      .end(done);
+        expect(res.status).to.eql(201);
+        done();
+      });
   });
 
   it('should fail to save Red-flag into the memory because of wrong data and respond appropriately', (done) => {
@@ -45,11 +47,13 @@ describe('Red-flag test (Post "/api/v1/red-flags")', () => {
       .post('/api/v1/red-flags')
       .send(testText)
       .expect(400)
-      .expect('Content-Type', /text/)
-      .expect((res) => {
-        expect(res.text).to.eql('"createdBy" must be a number');
-      })
-      .end(done);
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('"createdBy" must be a number');
+        expect(res.status).to.eql(400);
+        done();
+      });
   });
 });
 
@@ -59,10 +63,11 @@ describe('Red-flag test (Get "/api/v1/red-flags")', () => {
       .get('/api/v1/red-flags')
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body).to.be.an('array');
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 });
 
@@ -72,10 +77,11 @@ describe('Red-flag test (Get "/api/v1/red-flags/:id")', () => {
       .get(`/api/v1/red-flags/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body).to.be.an('object');
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 });
 
@@ -89,11 +95,12 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () => {
       .send(newLocation)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('updated red-flag record\'s location');
         expect(res.body.id).to.eql(testID);
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 
   it('should fail to edit the record\'s location because of wrong data entry', (done) => {
@@ -104,11 +111,13 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () => {
       .patch(`/api/v1/red-flags/${testID}/location`)
       .send(newComment)
       .expect(400)
-      .expect('Content-Type', /text/)
-      .expect((res) => {
-        expect(res.text).to.eql('update data is wrong. check data');
-      })
-      .end(done);
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('update data is wrong. check data');
+        expect(res.status).to.eql(400);
+        done();
+      });
   });
 
   it('should should not find id to edit', (done) => {
@@ -119,11 +128,13 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/location")', () => {
       .patch('/api/v1/red-flags/0/location')
       .send(newComment)
       .expect(404)
-      .expect('Content-Type', /text/)
-      .expect((res) => {
-        expect(res.text).to.eql('could not find record with id in red-flags');
-      })
-      .end(done);
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('could not find record with id in red-flags');
+        expect(res.status).to.eql(404);
+        done();
+      });
   });
 });
 
@@ -137,11 +148,12 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () => {
       .send(newComment)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('updated red-flag record\'s comment');
         expect(res.body.id).to.eql(testID);
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 
   it('should fail to edit the record\'s comment because of wrong data entry', (done) => {
@@ -152,11 +164,13 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () => {
       .patch(`/api/v1/red-flags/${testID}/comment`)
       .send(newComment)
       .expect(400)
-      .expect('Content-Type', /text/)
-      .expect((res) => {
-        expect(res.text).to.eql('update data is wrong. check data');
-      })
-      .end(done);
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('update data is wrong. check data');
+        expect(res.status).to.eql(400);
+        done();
+      });
   });
 
   it('should should not find id to edit', (done) => {
@@ -167,11 +181,13 @@ describe('Red-flag test (Patch "/api/v1/red-flags/:id/comment")', () => {
       .patch('/api/v1/red-flags/0/comment')
       .send(newComment)
       .expect(404)
-      .expect('Content-Type', /text/)
-      .expect((res) => {
-        expect(res.text).to.eql('could not find record with id in red-flags');
-      })
-      .end(done);
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        const error = JSON.parse(res.text);
+        expect(error.error).to.eql('could not find record with id in red-flags');
+        expect(res.status).to.eql(404);
+        done();
+      });
   });
 });
 
@@ -181,10 +197,11 @@ describe('Red-flag test (Delete "/api/v1/red-flags/:id")', () => {
       .delete(`/api/v1/red-flags/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('red-flag record has been deleted');
         expect(res.body.id).to.eql(testID);
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 });

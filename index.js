@@ -1,15 +1,14 @@
 // Import packages
-const express = require('express');
+import express from 'express';
+import routes from './server/routes/routes';
 // App
 const app = express();
 
 app.use(express.json());
-app.use(require('./routes/routes'));
+app.use(routes);
 
 // Starting server
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening at port ${port}....`));
 
-module.exports = {
-  app,
-};
+export default app;

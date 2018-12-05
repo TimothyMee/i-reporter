@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "rules": {
     "func-names": ["error", "never"],
-    "radix": ["error", "as-needed"]
+    "radix": ["error", "as-needed"],
+    "prefer-promise-reject-errors": "off"
   }
 }
