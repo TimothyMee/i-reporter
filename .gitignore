@@ -1,4 +1,7 @@
+API
 node_modules
 package-lock.json
-package.json
+#package.json
 .idea
+#coverage
+.nyc_output
