@@ -23,11 +23,12 @@ describe('Intervention test (Post "/api/v1/interventions")', () => {
       .send(testText)
       .expect(201)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('Created intervention record');
+        expect(res.status).to.eql(201);
         testID = res.body.id;
-      })
-      .end(done);
+        done();
+      });
   });
 
   it('should fail to save intervention into the memory because of wrong data and respond appropriately', (done) => {
@@ -47,11 +48,12 @@ describe('Intervention test (Post "/api/v1/interventions")', () => {
       .send(testText)
       .expect(400)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         const error = JSON.parse(res.text);
         expect(error.error).to.eql('"createdBy" must be a number');
-      })
-      .end(done);
+        expect(res.status).to.eql(400);
+        done();
+      });
   });
 });
 
@@ -61,10 +63,11 @@ describe('Intervention test (Get "/api/v1/interventions")', () => {
       .get('/api/v1/interventions')
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body).to.be.an('array');
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 });
 
@@ -74,10 +77,11 @@ describe('Intervention test (Get "/api/v1/interventions/:id")', () => {
       .get(`/api/v1/interventions/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body).to.be.an('object');
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 });
 
@@ -91,11 +95,12 @@ describe('Intervention test (Patch "/api/v1/interventions/:id/location")', () =>
       .send(newLocation)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('updated intervention record\'s location');
         expect(res.body.id).to.eql(testID);
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 
   it('should fail to edit the record\'s location because of wrong data entry', (done) => {
@@ -107,11 +112,12 @@ describe('Intervention test (Patch "/api/v1/interventions/:id/location")', () =>
       .send(newComment)
       .expect(400)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         const error = JSON.parse(res.text);
         expect(error.error).to.eql('update data is wrong. check data');
-      })
-      .end(done);
+        expect(res.status).to.eql(400);
+        done();
+      });
   });
 
   it('should should not find id to edit', (done) => {
@@ -123,11 +129,12 @@ describe('Intervention test (Patch "/api/v1/interventions/:id/location")', () =>
       .send(newComment)
       .expect(404)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         const error = JSON.parse(res.text);
         expect(error.error).to.eql('could not find record with id in interventions');
-      })
-      .end(done);
+        expect(res.status).to.eql(404);
+        done();
+      });
   });
 });
 
@@ -141,11 +148,12 @@ describe('Intervention test (Patch "/api/v1/interventions/:id/comment")', () => 
       .send(newComment)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('updated intervention record\'s comment');
         expect(res.body.id).to.eql(testID);
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 
   it('should fail to edit the record\'s comment because of wrong data entry', (done) => {
@@ -157,11 +165,12 @@ describe('Intervention test (Patch "/api/v1/interventions/:id/comment")', () => 
       .send(newComment)
       .expect(400)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         const error = JSON.parse(res.text);
         expect(error.error).to.eql('update data is wrong. check data');
-      })
-      .end(done);
+        expect(res.status).to.eql(400);
+        done();
+      });
   });
 
   it('should should not find id to edit', (done) => {
@@ -173,11 +182,12 @@ describe('Intervention test (Patch "/api/v1/interventions/:id/comment")', () => 
       .send(newComment)
       .expect(404)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         const error = JSON.parse(res.text);
         expect(error.error).to.eql('could not find record with id in interventions');
-      })
-      .end(done);
+        expect(res.status).to.eql(404);
+        done();
+      });
   });
 });
 
@@ -187,10 +197,11 @@ describe('Intervention test (Delete "/api/v1/interventions/:id")', () => {
       .delete(`/api/v1/interventions/${testID}`)
       .expect(200)
       .expect('Content-Type', /json/)
-      .expect((res) => {
+      .end((err, res) => {
         expect(res.body.message).to.eql('intervention record has been deleted');
         expect(res.body.id).to.eql(testID);
-      })
-      .end(done);
+        expect(res.status).to.eql(200);
+        done();
+      });
   });
 });
