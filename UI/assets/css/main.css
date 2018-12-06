@@ -31,6 +31,26 @@ li:hover{
     color: #00D62F;
 }
 
+.bg-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg-img.jpeg') center center no-repeat;
+    background-size: cover;
+}
+
+.bg-img:before {
+     content: '';
+     position: relative;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     background-image: linear-gradient(to bottom right,white, rgba(38, 82, 6, 0.94));
+     opacity: .12;
+ }
+
+
 .shadow{
     box-shadow: 2px 1px 20px 2px #EDEDED !important;
 }
@@ -145,6 +165,9 @@ li:hover{
 .card-img{
     width:100%;
     border-radius:40%;
+}
+.transparent{
+    background-color: transparent !important;
 }
 
 @media screen and (max-width: 650px) {
@@ -414,6 +437,9 @@ li:hover{
     width: 80%;
     margin-left: 5%;
     margin-right: 5%;
+}
+.btn-xl-height{
+    height: 50px;
 }
 .upload-btn-wrapper {
     position: relative;
