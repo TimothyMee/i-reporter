@@ -7,8 +7,12 @@
     "test": "mocha test/*.spec.js --require @babel/register --exit",
     "test-watch": "nodemon --exec 'npm test'",
     "lint": "eslint ./server/**/**.js",
-    "start--nodemon": "nodemon index.js --watch server --exec babel-node",
-    "start": "babel-node index.js --presets @babel/env",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./server -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js",
+    "start--nodemon": "nodemon ./server/index.js --watch server --exec babel-node",
+    "start-dev": "nodemon --exec babel-node server/index.js",
     "coverage": "node_modules/.bin/nyc --require @babel/register node_modules/.bin/mocha test/*.spec.js --exit",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
@@ -24,6 +28,7 @@
     "joi": "^14.3.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.2.0",

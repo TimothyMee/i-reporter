@@ -1,7 +1,7 @@
 import request from 'supertest';
 import expect from 'expect.js';
 
-import app from '../index';
+import app from '../server/index';
 
 let testID = 1;
 
