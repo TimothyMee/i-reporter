@@ -27,7 +27,7 @@
     "express": "^4.16.4",
     "joi": "^14.3.0",
     "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.2.0",
+    "@babel/core": "^7.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
