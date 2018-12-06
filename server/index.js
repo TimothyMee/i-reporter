@@ -1,6 +1,6 @@
 // Import packages
 import express from 'express';
-import routes from './server/routes/routes';
+import routes from './routes/routes';
 // App
 const app = express();
 
