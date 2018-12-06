@@ -1,3 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="report, reporter, ireporter, timothy" name="keywords">
+    <meta content="Timothy Fadayini" name="author">
+    <meta content="Incidence Reporting Application" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="./UI/assets/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+<div class="wrapper-harsh bg-img" id="app">
+    <div class="max-width">
+        <div class="main-content card card-full transparent">
+            <div class="card card-xl left-offset-1 transparent top-offset-1 no-border">
+                <h4 class="font-xl">
+                    iReporter
+                </h4>
+                <p class="top-offset-2 bottom-offset-2 label font-sm">
+                    enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the
+                    general public. Users can also report on things that needs government intervention
+                </p>
+            </div>
+
+            <div class="card card-sm harsh-color top-offset-2 shadow">
+                <div class="card card-full text-align-center">
+                    <h4 class="font-sm label">Help us by reporting</h4>
+                    <hr>
+                    <button @click="openPage('sign-up')" class="button btn-xl btn-xl-height top-offset-2 bottom-offset-2">Sign Up</button>
+                    <button @click="openPage('login')" class="button btn-xl btn-xl-height top-offset-2 bottom-offset-2">Login</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h4 class="font-smallest label text-white">&copy; 2018. Timothy Mee ---- iReporter</h4>
+        </footer>
+    </div>
+</div>
+
+<script src="./UI/assets/js/vue.js" type="text/javascript"></script>
+
 <script type="text/javascript">
-    window.location.replace("UI/sign-up.html");
+    new Vue({
+        el: '#app',
+        data(){
+            return {
+
+            }
+        },
+        methods:{
+            openPage(name){
+                window.location.href = `./UI/${name}.html`;
+            }
+        },
+        mounted(){
+
+        }
+    })
 </script>
+
+</body>
+</html>
+
+
+
+<!--<script type="text/javascript">-->
+    <!--window.location.replace("UI/sign-up.html");-->
+<!--</script>-->
