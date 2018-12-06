@@ -15,6 +15,6 @@ const incidentSchema = {
   comment: Joi.string().required(),
 };
 
-module.exports = {
+export default {
   incidentSchema,
 };

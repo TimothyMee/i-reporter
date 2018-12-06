@@ -4,7 +4,8 @@ import schema from '../helpers/schema';
 
 const incidentModel = {
   /**
-   * gets all incidents.
+   * Gets all incidents.
+   *
    * @param {string} type - The type of incident (redflag or intervention).
    */
   getAll(type) {
@@ -28,7 +29,8 @@ const incidentModel = {
     });
   },
   /**
-   * creates new incidents.
+   * Creates new incidents.
+   *
    * @param {object} incident - The data of the incident to be created.
    * @param {string} type - The type of incident (redflag or intervention).
    */
@@ -66,7 +68,8 @@ const incidentModel = {
     });
   },
   /**
-   * gets an incidents by id.
+   * Gets an incidents by id.
+   *
    * @param {int} id - The incident's id to fetch.
    * @param {string} type - The type of incident (redflag or intervention).
    */
@@ -93,7 +96,8 @@ const incidentModel = {
     });
   },
   /**
-   * edits an incident's location.
+   * Edits an incident's location.
+   *
    * @param {int} id - The incident's id to edited.
    * @param {object} newLocation - The new location.
    * @param {string} type - The type of incident (redflag or intervention).
@@ -135,7 +139,8 @@ const incidentModel = {
     });
   },
   /**
-   * edits an incident's comment.
+   * Edits an incident's comment.
+   *
    * @param {int} id - The incident's id to edited.
    * @param {object} newComment - The new comment.
    * @param {string} type - The type of incident (redflag or intervention).
@@ -176,7 +181,8 @@ const incidentModel = {
     });
   },
   /**
-   * deletes an incidents by id.
+   * Deletes an incidents by id.
+   *
    * @param {int} id - The incident's id to delete.
    * @param {string} type - The type of incident (redflag or intervention).
    */

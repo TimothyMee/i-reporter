@@ -2,7 +2,8 @@ import incidentModel from '../models/incident-model';
 
 const IncidentController = {
   /**
-   * gets all Red Flag.
+   * Gets all Red Flag.
+   *
    * @param {objects} [req] - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -17,7 +18,8 @@ const IncidentController = {
   },
 
   /**
-   * gets a Red Flag by id.
+   * Gets a Red Flag by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -32,7 +34,8 @@ const IncidentController = {
   },
 
   /**
-   * create a Red Flag.
+   * Create a Red Flag.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -48,7 +51,8 @@ const IncidentController = {
   },
 
   /**
-   * edits a Red Flag's Location by id.
+   * Edits a Red Flag's Location by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -62,7 +66,8 @@ const IncidentController = {
       });
   },
   /**
-   * edits a Red Flag's Comment by id.
+   * Edits a Red Flag's Comment by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -76,7 +81,8 @@ const IncidentController = {
       });
   },
   /**
-   * delete a Red Flag's Location by id.
+   * Delete a Red Flag's Location by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -91,7 +97,8 @@ const IncidentController = {
   },
 
   /**
-   * gets all Intervention.
+   * Gets all Intervention.
+   *
    * @param {objects} [req] - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -105,7 +112,8 @@ const IncidentController = {
       });
   },
   /**
-   * gets a Intervention by id.
+   * Gets a Intervention by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -119,7 +127,8 @@ const IncidentController = {
       });
   },
   /**
-   * create a Intervention.
+   * Create a Intervention.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -134,7 +143,8 @@ const IncidentController = {
       });
   },
   /**
-   * edits a Intervention's Location by id.
+   * Edits a Intervention's Location by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -148,7 +158,8 @@ const IncidentController = {
       });
   },
   /**
-   * edits a Intervention's Comment by id.
+   * Edits a Intervention's Comment by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
@@ -162,7 +173,8 @@ const IncidentController = {
       });
   },
   /**
-   * delete a Intervention's Location by id.
+   * Delete a Intervention's Location by id.
+   *
    * @param {objects} req - The request Object from the user.
    * @param {objects} res - The response Object for the user.
    */
