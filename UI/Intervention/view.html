@@ -19,20 +19,13 @@
 <div class="wrapper-harsh harsh-color" id="app">
     <div class="max-width">
         <header>
-            <div class="card card-full header-harsh green-border-bottom">
+            <div class="card card-full header-harsh green-border-bottom shadow">
                 <div class="card card-sm header-harsh border-right no-border-radius">
                     <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
                 </div>
-                <div class="card card-md header-harsh left-offset-1">
-                    <div class="nav">
-                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
-                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="index.html">Intervention</a></h4>
-                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
-                    </div>
-                </div>
 
-                <div class="card card-xs align-right header-harsh">
-                    <div class="dropdown">
+                <div class="card card-xl align-right header-harsh">
+                    <div class="dropdown align-right left-offset-1">
                         <a href="#" class="">
                             <img src="../assets/images/avatar.jpg" alt="" class="dropbtn profile-image align-right right-offset-3">
                         </a>
@@ -41,8 +34,25 @@
                             <a href="../login.html">Logout</a>
                         </div>
                     </div>
+
+                    <div class="card card-md header-harsh align-right left-offset-1">
+                        <div class="nav">
+                            <div class="dropdown">
+                                <a href="#" class="">
+                                    <h4 class="font-xxs fas fa-caret-down dropbtn label hidden"></h4>                                    </a>
+                                <div class="dropdown-content">
+                                    <a href="./Dashboard/user.html">Dashboard</a>
+                                    <a href="./login.html">Logout</a>
+                                </div>
+                            </div>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="card card-full harsh-color no-border">
                 <div class="card card-sm harsh-color no-border">&nbsp;</div>
                 <div class="card card-md harsh-color no-border left-offset-1">
@@ -61,14 +71,14 @@
             <div class="card card-full harsh-color">
                 <div class="card card-sm harsh-color border-right shadow">
                     <ul>
-                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                        <li class="top-offset-1 border-bottom left-offset-2 right-offset-2
                                 faint-black font-sl list hvr-icon-spin hvr-forward"
                             @click="openContent('overview')"
                             :class="overviewColor"
                         >
                             <span>Overview</span>
                         </li>
-                        <li class="top-offset-1 border-bottom left-offset-1 right-offset-1
+                        <li class="top-offset-1 border-bottom left-offset-2 right-offset-2
                                 faint-black font-sl list hvr-icon-spin hvr-forward"
                             @click="openContent('gallery')"
                             :class="galleryColor"
@@ -79,7 +89,7 @@
                 </div>
 
                 <div v-if="showOverview" class="animated fadeIn card card-xl align-left harsh-color">
-                    <div class="card card-xxl left-offset-1 shadow">
+                    <div class="card card-xxl left-offset-1 right-offset-1 shadow">
                         <h3 class="font-sm left-offset-1">Name:</h3>
                         <p class="label left-offset-1 right-offset-1">
                             Sample Intervention
@@ -95,14 +105,10 @@
                             he is full of mischief
                         </p>
                     </div>
-
-                    <div class="card card-xxl left-offset-1 shadow">
-
-                    </div>
                 </div>
 
-                <div v-if="showOverview" class="animated fadeIn card card-xs harsh-color align-left">
-                    <div class="card card-xxl align-left green-border-bottom green-top-bottom top-offset-2 shadow">
+                <div v-if="showOverview" class="animated fadeIn card card-xs harsh-color status-div align-left no-border">
+                    <div class="card card-xxl align-left top-offset-2 status-div-2 shadow">
                         <div class="left-offset-1 right-offset-1">
                             <h3 class="label font-xs">Status:</h3>
                             <h1 class="label font-xxs status-pending">Pending</h1>
@@ -166,7 +172,7 @@
                 showOverview:true,
                 showGallery:false,
                 galleryColor:'',
-                overviewColor:'green-color',
+                overviewColor:'black-color',
                 playerOptions: {
                     height: '360',
                     width:'100',
@@ -188,12 +194,12 @@
                     this.showGallery = false;
                     this.showOverview = true;
                     this.galleryColor = '';
-                    this.overviewColor = 'green-color';
+                    this.overviewColor = 'black-color';
                 }
                 else if(name === 'gallery'){
                     this.showOverview = false;
                     this.showGallery = true;
-                    this.galleryColor = 'green-color';
+                    this.galleryColor = 'black-color';
                     this.overviewColor = '';
                 }
             }
