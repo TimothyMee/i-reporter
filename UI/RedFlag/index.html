@@ -17,30 +17,45 @@
 <div class="wrapper-harsh harsh-color " id="app">
     <div class="max-width">
         <header>
-            <div class="card card-full header-harsh green-border-bottom">
-                <div class="card card-sm header-harsh border-right no-border-radius">
-                    <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
+            <div class="card card-full header-harsh green-border-bottom shadow">
+                <div class="card card-sm header-harsh border-right no-border-radius mobile-height">
+                    <div class="dropdown mobile-dropdown">
+                        <a href="#" class="label">
+                            <h4 class="font-xxs fas fa-bars dropbtn label"></h4>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="../home.html">Home</a>
+                            <a href="../Intervention/index.html">Intervention</a>
+                            <a href="../RedFlag/index.html">Red-Flag</a>
+                            <hr>
+                            <a href="../Dashboard/user.html">Dashboard</a>
+                            <a href="../login.html">Logout</a>
+                        </div>
+                    </div>
+                    <h4 class="font-xs text-align-center label mobile-heading"><a href="#">iReporter</a></h4>
                 </div>
-                   <div class="card card-md header-harsh left-offset-1">
-                       <div class="nav">
-                           <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
-                           <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
-                           <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="index.html">Red-Flag</a></h4>
-                       </div>
-                   </div>
 
-                   <div class="card card-xs align-right header-harsh">
-                       <div class="dropdown">
-                           <a href="#" class="">
-                               <img src="../assets/images/avatar.jpg" alt="" class="dropbtn profile-image align-right right-offset-3">
-                           </a>
-                           <div class="dropdown-content">
-                               <a href="../Dashboard/user.html">Dashboard</a>
-                               <a href="../login.html">Logout</a>
-                           </div>
-                       </div>
-                   </div>
+                <div class="card card-xl align-right header-harsh web-heading">
+                    <div class="dropdown align-right left-offset-1">
+                        <a href="#" class="">
+                            <img src="../assets/images/avatar.jpg" alt="" class="dropbtn profile-image align-right right-offset-3">
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="../Dashboard/user.html">Dashboard</a>
+                            <a href="../login.html">Logout</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-md header-harsh align-right left-offset-1">
+                        <div class="nav">
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="card card-full harsh-color no-border">
                 <div class="card card-sm harsh-color no-border">&nbsp;</div>
                 <div class="card card-md harsh-color no-border left-offset-1">
@@ -48,7 +63,7 @@
                         <h5 class="font-smallest">
                             <i class="far fa-dot-circle"></i>
                             <a href="../home.html" class="">&nbsp;HOME</a>
-                            /<a href="index.html">&nbsp;RED FLAG</a>
+                            /<a href="../RedFlag/index.html">&nbsp;RED FLAG</a>
                             /<a href="#">&nbsp;{{pageName}}</a>
                         </h5>
                     </div>
@@ -89,7 +104,7 @@
                     </div>
 
                     <div v-if="newRedFlag" class="animated fadeIn card card-xl-plus1 harsh-color">
-                        <div class="card card-xxl left-offset-1 shadow">
+                        <div class="card card-xxl left-offset-1 right-offset-1 shadow">
                             <form class="top-offset-2 left-offset-2">
                                 <div class="top-offset-1">
                                     <label for="name" class="label">Name:</label>
@@ -105,14 +120,17 @@
                                     </textarea>
                                 </div>
 
-                                <div class="top-offset-1 bottom-offset-2 card card-full no-border">
-                                    <div class="upload-btn-wrapper align-left top-offset-2">
+                                <div class="top-offset-2 bottom-offset-2 card card-full no-border">
+                                    <div class="upload-btn-wrapper">
                                         <label for="location" class="label">Images:</label>
                                         <br>
                                         <button class="upload-btn">Upload <i class="far fa-image"></i></button>
                                         <input type="file" name="myfile"/>
                                     </div>
-                                    <div class="upload-btn-wrapper align-left left-offset-3 top-offset-2">
+                                </div>
+
+                                <div class="top-offset-1 bottom-offset-2 card card-full no-border">
+                                    <div class="upload-btn-wrapper">
                                         <label for="location" class="label">Videos:</label>
                                         <br>
                                         <button class="upload-btn">Upload <i class="far fa-image"></i></button>
@@ -138,9 +156,8 @@
 
                     <div v-if="viewRedFlag" class="animated fadeIn">
                         <div class="card card-xl harsh-color">
-                            <h4 class="left-offset-1 font-xs">All RedFlags</h4>
-                            <hr class="bottom-offset-1">
                             <table class="table">
+                                <h4 class="font-xs text-align-center">All RedFlags</h4>
                                 <tr>
                                     <th>Name</th>
                                     <th>Details</th>
@@ -206,9 +223,8 @@
 
                     <div v-if="deleteRedFlag" class="animated fadeIn">
                         <div class="card card-xl harsh-color">
-                            <h4 class="left-offset-1 font-xs">Delete RedFlags</h4>
-                            <hr class="bottom-offset-1">
                             <table class="table">
+                                <h4 class="font-xs text-align-center">Delete RedFlags</h4>
                                 <tr>
                                     <th>Name</th>
                                     <th>Details</th>
@@ -241,36 +257,6 @@
                                     <td>
                                         <a href="#" class="left-offset-2 right-offset-2"><i class="far fa-trash-alt"></i></a>
                                     </td>
-                                </tr>
-                            </table>
-
-                            <br><br>
-
-                            <h4 class="left-offset-1 font-xs top-offset-2">Deleted RedFlags</h4>
-                            <hr class="bottom-offset-1">
-                            <table class="table bottom-offset-3">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Details</th>
-                                    <th>Status</th>
-                                </tr>
-
-                                <tr>
-                                    <td>Timothy</td>
-                                    <td>Timothy is working on his system a lot</td>
-                                    <td class="status-pending">Pending</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Timothy</td>
-                                    <td>Timothy is working on his system a lot</td>
-                                    <td class="status-correct">Resolved</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Timothy</td>
-                                    <td>Timothy is working on his system a lot</td>
-                                    <td class="status-wrong">Rejected</td>
                                 </tr>
                             </table>
                         </div>
@@ -317,7 +303,7 @@
                 viewRedFlag: false,
                 deleteRedFlag: false,
                 pageName:'new',
-                createColor: 'green-color',
+                createColor: 'black-color',
                 deleteColor: '',
                 viewColor: ''
             }
@@ -330,7 +316,7 @@
                     this.newRedFlag = true;
                     this.pageName = name;
 
-                    this.createColor = 'green-color';
+                    this.createColor = 'black-color';
                     this.deleteColor = '';
                     this.viewColor = '';
                 }
@@ -342,7 +328,7 @@
 
                     this.createColor = '';
                     this.deleteColor = '';
-                    this.viewColor = 'green-color';
+                    this.viewColor = 'black-color';
                 }
                 else if(name === 'delete'){
                     this.viewRedFlag = false;
@@ -351,7 +337,7 @@
                     this.pageName = name;
 
                     this.createColor = '';
-                    this.deleteColor = 'green-color';
+                    this.deleteColor = 'black-color';
                     this.viewColor = '';
                 }
             }
