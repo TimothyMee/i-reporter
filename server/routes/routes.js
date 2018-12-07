@@ -27,7 +27,9 @@ router.use('/api/v1', router);
 router.use('*', express.Router()
   .all('/*', (req, res) => {
     res.status(403)
-      .send('use appropriate routes');
+      .json({
+        error: 'please use a valid route',
+      });
   }));
 
 export default router;
