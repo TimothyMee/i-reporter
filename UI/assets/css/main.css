@@ -9,14 +9,14 @@ a{
     color: #354154;
 }
 a:hover{
-    color: #00B549;
-    border-bottom: 2px solid;
+    border-bottom: 1px solid;
 }
 body{
     min-height: 100%;
 }
 header{
     box-shadow: 2px 2px 2px #EDEDED !important;
+    width: 100%;
 }
 footer{
     flex-shrink: 0;
@@ -24,11 +24,12 @@ footer{
     text-align: center;
     border-top: 1px solid #00D62F !important;
     box-shadow: 0px 2px 2px #E4E6EB;
-    height: 20%;
+    height: 10%;
+    width:100%;
 }
 
 li:hover{
-    color: #00D62F;
+    border-bottom: 1px solid;
 }
 
 .bg-img {
@@ -77,9 +78,9 @@ li:hover{
     bottom: 0px;
     right: 0px;
     background: linear-gradient(to right bottom, #A4CAA6, rgba(38, 82, 6, 0.94));
-    width:99.8%;
-    min-width:99.8%;
-    max-width:99.8%;
+    width:100%;
+    min-width:100%;
+    max-width:100%;
     height: auto;
     overflow: auto;
 }
@@ -93,9 +94,9 @@ li:hover{
     bottom: 0px;
     right: 0px;
     background-color: #F1F3F8;
-    width:99.8%;
-    min-width:99.8%;
-    max-width:99.8%;
+    width:100%;
+    min-width:100%;
+    max-width:100%;
     height: auto;
     overflow: auto;
 }
@@ -151,6 +152,7 @@ li:hover{
     width:20%;
     min-width:20%;
     height: auto;
+    margin-left:2%;
 }
 .card-xs{
     width:15%;
@@ -162,6 +164,13 @@ li:hover{
     min-width:40%;
     height: auto;
 }
+.signup{
+    width:40%;
+    min-width:40%;
+    height: auto;
+    margin-right: 30%;
+    margin-left: 30%;
+}
 .card-img{
     width:100%;
     border-radius:40%;
@@ -170,7 +179,73 @@ li:hover{
     background-color: transparent !important;
 }
 
+.hidden{
+    display: none !important;
+}
+
+.mobile-heading{
+    float: left;
+    margin-left: 4%;
+}
+.mobile-dropdown{
+    float: left;
+    margin-right: 4%;
+    margin-left: 2%;
+    margin-top: 1.3%;
+    color: rgb(62, 75, 91) !important;
+    display: none !important;
+}
+@media screen and (max-width: 900px) {
+    .signup{
+        width: auto !important;
+        margin-right:10%;
+        margin-left:10%;
+        float: none;
+    }
+}
 @media screen and (max-width: 650px) {
+    body{
+      width: auto;
+    }
+
+    header{
+        width: auto;
+        height: auto;
+    }
+
+    .header-harsh{
+        float: none !important;
+    }
+
+    .dropbtn{
+        color: rgb(62, 75, 91) !important;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top:100%;
+        left: 2%;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .mobile-height{
+        height: 60px
+    }
+    .web-heading{
+        display: none !important;
+    }
+
+    .mobile-dropdown{
+        display: block !important;
+    }
+    .hidden{
+        display: flex !important;
+    }
+
     .border-left{
         border-left: 0px;
     }
@@ -183,21 +258,59 @@ li:hover{
     }
 
     .view-image, .card-img {
-        width: 100%;
+        width: 70%;
     }
-    .card-lg, .card-xl, .card-sm, .card-xxl, .card-xs, .card-full, .card-md{
-        width: 80% !important;
-        margin-right:5%;
-        margin-left:5%;
+    .card-lg, .card-xl, .card-sm, .card-xxl, .card-xs, .card-full, .card-md, .card-xl-plus1{
+        width: auto !important;
+        margin-right:auto;
+        margin-left:auto;
+        float: none;
+    }
+
+    .status-div{
+        min-width: 80%;
+        max-width: 80%;
+        width: auto !important;
+    }
+    .status-div-2{
+        margin-left: 20%;
+        width: auto !important;
+    }
+    .vjs-custom-skin{
+        width: auto !important;
     }
 
     .left-offset-1, .left-offset-2,.left-offset-3{
-        margin-left:0px;
+        margin-left:auto;
+        float: none;
     }
     .right-offset-1, .right-offset-2,.right-offset-3{
-        margin-right:0px;
+        margin-right:auto;
+        float: none;
+    }
+    .max-width, .main-content {
+        width: auto;
+        float: none;
     }
 
+    .button, .btn-md, .btn-lg, .btn-xl{
+        width: auto;
+        margin:0% 1%;
+    }
+    .wrapper, .wrapper-harsh{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width:auto;
+        min-width:auto;
+        max-width:auto;
+        height: auto;
+        overflow: auto;
+    }
+    .table{
+        width: auto;
+        margin-left: 0% !important;
+    }
 }
 
 
@@ -247,7 +360,9 @@ li:hover{
 }
 
 
-
+.right-offset-half{
+    margin-right: 2%;
+}
 .left-offset-1{
     margin-left:10%;
 }
@@ -367,7 +482,8 @@ li:hover{
 .dropdown-content {
     display: none;
     position: absolute;
-    left:30px;
+    top:100%;
+    right: 1%;
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -385,12 +501,13 @@ li:hover{
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color:#EDEDED;}
 
 
 
 
 .text-input{
+    margin-top: 10px;
     font-size:100%;
     padding:2.5%;
     width: inherit;
@@ -491,6 +608,10 @@ li:hover{
 .green-color{
     color: #00D62F;
 }
+
+.black-color{
+    color: black;
+}
 .white-bg{
     background-color: white;
     border: 1px solid white;
@@ -537,6 +658,10 @@ li:hover{
 .align-right{
     float: right;
 }
+.align-middle{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 .text-align-center{
     text-align: center;
 }
@@ -544,6 +669,7 @@ li:hover{
 
 
 .table {
+    margin-left: 5%;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;

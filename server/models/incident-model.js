@@ -3,7 +3,11 @@ import helper from '../helpers/helper';
 import schema from '../helpers/schema';
 
 const incidentModel = {
-
+  /**
+   * Gets all incidents.
+   *
+   * @param {string} type - The type of incident (redflag or intervention).
+   */
   getAll(type) {
     const result = helper.readJSONFile(`./server/db/${type}.json`);
     return new Promise((resolve, reject) => {
@@ -24,7 +28,12 @@ const incidentModel = {
       });
     });
   },
-
+  /**
+   * Creates new incidents.
+   *
+   * @param {object} incident - The data of the incident to be created.
+   * @param {string} type - The type of incident (redflag or intervention).
+   */
   createNew(incident, type) {
     return new Promise((resolve, reject) => {
       const incidentData = incident;
@@ -58,7 +67,12 @@ const incidentModel = {
       }
     });
   },
-
+  /**
+   * Gets an incidents by id.
+   *
+   * @param {int} id - The incident's id to fetch.
+   * @param {string} type - The type of incident (redflag or intervention).
+   */
   get(id, type) {
     return new Promise((resolve, reject) => {
       this.getAll(type)
@@ -81,7 +95,13 @@ const incidentModel = {
         });
     });
   },
-
+  /**
+   * Edits an incident's location.
+   *
+   * @param {int} id - The incident's id to edited.
+   * @param {object} newLocation - The new location.
+   * @param {string} type - The type of incident (redflag or intervention).
+   */
   editLocation(id, newLocation, type) {
     return new Promise((resolve, reject) => {
       this.getAll(type)
@@ -118,7 +138,13 @@ const incidentModel = {
         });
     });
   },
-
+  /**
+   * Edits an incident's comment.
+   *
+   * @param {int} id - The incident's id to edited.
+   * @param {object} newComment - The new comment.
+   * @param {string} type - The type of incident (redflag or intervention).
+   */
   editComment(id, newComment, type) {
     return new Promise((resolve, reject) => {
       this.getAll(type)
@@ -154,7 +180,12 @@ const incidentModel = {
         });
     });
   },
-
+  /**
+   * Deletes an incidents by id.
+   *
+   * @param {int} id - The incident's id to delete.
+   * @param {string} type - The type of incident (redflag or intervention).
+   */
   deleteIncident(id, type) {
     return new Promise((resolve, reject) => {
       this.getAll(type)

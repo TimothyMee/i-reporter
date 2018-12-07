@@ -17,26 +17,27 @@
 <div class="wrapper-harsh harsh-color" id="app">
     <div class="max-width animated fadeIn">
         <header>
-            <div class="card card-full header-harsh green-border-bottom">
+            <div class="card card-full header-harsh green-border-bottom shadow">
                 <div class="card card-sm header-harsh border-right no-border-radius">
                     <h4 class="font-xs text-align-center label"><a href="#">iReporter</a></h4>
                 </div>
-                <div class="card card-md header-harsh left-offset-1">
-                    <div class="nav">
-                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
-                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
-                        <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
-                    </div>
-                </div>
 
-                <div class="card card-xs align-right header-harsh">
-                    <div class="dropdown">
+                <div class="card card-xl align-right header-harsh">
+                    <div class="dropdown align-right left-offset-1">
                         <a href="#" class="">
                             <img src="../assets/images/avatar.jpg" alt="" class="dropbtn profile-image align-right right-offset-3">
                         </a>
                         <div class="dropdown-content">
                             <a href="../Dashboard/user.html">Dashboard</a>
                             <a href="../login.html">Logout</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-md header-harsh align-right left-offset-1">
+                        <div class="nav">
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../home.html">Home</a></h4>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../Intervention/index.html">Intervention</a></h4>
+                            <h4 class="font-xxs text-align-center label align-left right-offset-1"><a href="../RedFlag/index.html">Red-Flag</a></h4>
                         </div>
                     </div>
                 </div>
@@ -48,8 +49,7 @@
                     <div class="bread-crumbs">
                         <h5 class="font-smallest">
                             <i class="far fa-dot-circle"></i>
-                            <a href="#" class="">&nbsp;ADMIN</a>
-                            /<a href="#">&nbsp;Dashboard</a>
+                            <a href="../home.html" class="">&nbsp;Admin</a>
                         </h5>
                     </div>
                 </div>
@@ -59,7 +59,18 @@
             <div class="card card-full harsh-color no-margin-bottom">
                 <div class="top-offset-1">
                     <div class="card card-full harsh-color no-border top-offset-1">
-                        <div class="card card-sm left-offset-1 border-right border-left shadow">
+                        <div class="card card-sm left-offset-1 border-right border-top border-left border-bottom shadow">
+                            <a href="#" class="">
+                                <div class="white-bg">
+                                    <div class="left-offset-1 bottom-offset-4">
+                                        <h3 class="font-xs label text-align-center">No Of Pending:</h3>
+                                        <h1 class="left-offset-3 text-align-center">20</h1>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card card-sm left-offset-1 border-right border-top border-left border-bottom shadow">
                             <a href="#" class="">
                                 <div class="white-bg">
                                     <div class="left-offset-1 bottom-offset-4">
@@ -70,22 +81,11 @@
                             </a>
                         </div>
 
-                        <div class="card card-sm left-offset-1 border-right border-left shadow">
+                        <div class="card card-sm left-offset-1 border-right border-top border-left border-bottom shadow">
                             <a href="#" class="">
                                 <div class="white-bg">
                                     <div class="left-offset-1 bottom-offset-4">
-                                        <h3 class="font-xs label text-align-center">No Of Resolved:</h3>
-                                        <h1 class="left-offset-3 text-align-center">20</h1>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="card card-sm left-offset-1 border-right border-left shadow">
-                            <a href="#" class="">
-                                <div class="white-bg">
-                                    <div class="left-offset-1 bottom-offset-4">
-                                        <h3 class="font-xs label text-align-center">No Of Resolved:</h3>
+                                        <h3 class="font-xs label text-align-center">No Of Rejected:</h3>
                                         <h1 class="left-offset-3 text-align-center">20</h1>
                                     </div>
                                 </div>
@@ -94,10 +94,8 @@
                     </div>
                     <div class="card card-xxl harsh-color left-offset-1 right-offset-1">
                         <div class="bottom-offset-3 top-offset-2">
-                            <div class="card card-full harsh-color">
-                                <h3 class="font-sm align-left">List Of Requests</h3>
-                            </div>
-                            <table class="table">
+                            <table class="table no-margin-left">
+                                <h3 class="font-sm text-align-center">List Of Requests</h3>
                                 <tr>
                                     <th>Name</th>
                                     <th>Details</th>
